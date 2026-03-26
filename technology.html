@@ -10,11 +10,11 @@
     .nav-links.open { display: flex; flex-direction: column; position: absolute; top: var(--nav-height); left: 0; right: 0; background: rgba(12, 15, 20, 0.98); backdrop-filter: blur(20px); padding: 16px 24px; border-bottom: 1px solid var(--border); gap: 4px; }
     .tech-section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0; }
     .data-sources { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
-    .data-source-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; text-align: center; transition: var(--transition); }
-    .data-source-card:hover { border-color: var(--border-hover); background: var(--bg-card-hover); transform: translateY(-4px); }
-    .data-source-icon { font-size: 20px; display: block; margin-bottom: 12px; font-weight: 700; }
-    .data-source-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
-    .data-source-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .data-source-card { background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 24px; text-align: center; transition: var(--transition); box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+    .data-source-card:hover { border-color: rgba(90, 88, 242, 0.2); transform: translateY(-4px); box-shadow: 0 10px 24px rgba(90, 88, 242, 0.08); }
+    .data-source-icon { font-size: 20px; display: block; margin-bottom: 12px; font-weight: 700; color: #0B0D17; }
+    .data-source-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 8px; color: #0B0D17; }
+    .data-source-card p { font-size: 13px; color: #4A4A5A; line-height: 1.6; }
     @media (max-width: 768px) { .data-sources { grid-template-columns: 1fr 1fr; } }
   </style>
 </head>
@@ -60,24 +60,24 @@
 
 <div class="tech-section-divider"></div>
 
-<section>
+<section class="section-light">
   <div class="container">
     <div style="text-align:center; max-width:760px; margin:0 auto;" class="reveal"><span class="section-label">Core Engines</span><h2 class="section-title">핵심 기술 요소</h2><p class="section-subtitle" style="margin:0 auto;">각 기술은 독립 기능이 아니라 검색, 분석, 실행을 연결하는 조합으로 동작합니다.</p></div>
     <div class="capabilities-grid">
-      <div class="card reveal stagger-1"><div class="card-icon icon-blue">RAG</div><h3>RAG 기반 지식 검색</h3><p>문서와 규정, 매뉴얼을 검색 가능한 지식으로 변환하고 답변과 함께 관련 출처를 제공합니다.</p></div>
-      <div class="card reveal stagger-2"><div class="card-icon icon-purple">SQL</div><h3>Text-to-SQL 분석 엔진</h3><p>자연어 질문을 데이터 질의로 바꿔 현업 사용자가 데이터에 더 빠르게 접근할 수 있도록 돕습니다.</p></div>
-      <div class="card reveal stagger-3"><div class="card-icon icon-teal">AGT</div><h3>Agent 실행 계층</h3><p>여러 단계의 업무를 규칙과 도구 연동에 맞춰 자동 실행하고 후속 액션까지 이어지게 합니다.</p></div>
+      <div class="card-light reveal stagger-1"><div class="card-icon icon-blue tech-font">RAG</div><h3>RAG 기반 지식 검색</h3><p>문서와 규정, 매뉴얼을 검색 가능한 지식으로 변환하고 답변과 함께 관련 출처를 제공합니다.</p></div>
+      <div class="card-light reveal stagger-2"><div class="card-icon icon-purple tech-font">SQL</div><h3>Text-to-SQL 분석 엔진</h3><p>자연어 질문을 데이터 질의로 바꿔 현업 사용자가 데이터에 더 빠르게 접근할 수 있도록 돕습니다.</p></div>
+      <div class="card-light reveal stagger-3"><div class="card-icon icon-teal tech-font">AGT</div><h3>Agent 실행 계층</h3><p>여러 단계의 업무를 규칙과 도구 연동에 맞춰 자동 실행하고 후속 액션까지 이어지게 합니다.</p></div>
     </div>
   </div>
 </section>
 
-<section style="background:var(--bg-secondary);">
+<section class="section-light" style="background:#FFFFFF;">
   <div class="container">
     <div style="text-align:center; max-width:760px; margin:0 auto;" class="reveal"><span class="section-label">Data Sources</span><h2 class="section-title">연결 가능한 데이터 자산</h2><p class="section-subtitle" style="margin:0 auto;">기업이 이미 사용 중인 시스템을 최대한 활용하는 것이 도입 속도를 좌우합니다.</p></div>
     <div class="data-sources">
-      <div class="data-source-card reveal stagger-1"><span class="data-source-icon">DOC</span><h4>문서 저장소</h4><p>사내 문서, 규정집, 회의록, 프로젝트 산출물을 지식 검색 자산으로 전환합니다.</p></div>
-      <div class="data-source-card reveal stagger-2"><span class="data-source-icon">DB</span><h4>업무 데이터베이스</h4><p>운영 데이터, KPI 테이블, 통계 정보를 자연어 기반 분석 흐름에 연결합니다.</p></div>
-      <div class="data-source-card reveal stagger-3"><span class="data-source-icon">API</span><h4>내부/외부 API</h4><p>CRM, ERP, 메신저, 협업 도구와 연계해 실행형 자동화 시나리오를 구성합니다.</p></div>
+      <div class="data-source-card reveal stagger-1"><span class="data-source-icon tech-font">DOC</span><h4 class="tech-font">문서 저장소</h4><p>사내 문서, 규정집, 회의록, 프로젝트 산출물을 지식 검색 자산으로 전환합니다.</p></div>
+      <div class="data-source-card reveal stagger-2"><span class="data-source-icon tech-font">DB</span><h4 class="tech-font">업무 데이터베이스</h4><p>운영 데이터, KPI 테이블, 통계 정보를 자연어 기반 분석 흐름에 연결합니다.</p></div>
+      <div class="data-source-card reveal stagger-3"><span class="data-source-icon tech-font">API</span><h4 class="tech-font">내부/외부 API</h4><p>CRM, ERP, 메신저, 협업 도구와 연계해 실행형 자동화 시나리오를 구성합니다.</p></div>
     </div>
   </div>
 </section>
