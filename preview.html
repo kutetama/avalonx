@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AvalonX Design System Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+<style>
+:root {
+  --bg-base: #0C0F14;
+  --bg-surface: #161A22;
+  --bg-elevated: #1C2029;
+  --bg-sunken: #08090D;
+  --text-primary: #F0EBE3;
+  --text-secondary: rgba(240, 235, 227, 0.72);
+  --text-muted: rgba(240, 235, 227, 0.48);
+  --border: rgba(200, 188, 172, 0.12);
+  --border-hover: rgba(200, 188, 172, 0.24);
+  /* Brand blue from logo gradient */
+  --brand-dark: #0A3DFF;
+  --brand-mid: #1E6BFF;
+  --brand-light: #4FA3FF;
+  --accent: #D4853A;
+  --accent-hover: #B86E28;
+  --accent-subtle: rgba(212, 133, 58, 0.12);
+  --success: #3D7A5F;
+  --warning: #B87333;
+  --error: #A33A12;
+  --info: #4A7FB5;
+  --font-display: 'Noto Serif KR', Georgia, serif;
+  --font-body: 'Pretendard Variable', 'Pretendard', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --sp-2: 2px; --sp-4: 4px; --sp-8: 8px; --sp-12: 12px;
+  --sp-16: 16px; --sp-24: 24px; --sp-32: 32px;
+  --sp-48: 48px; --sp-64: 64px; --sp-96: 96px;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px;
+  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+:root.light {
+  --bg-base: #F0EBE3;
+  --bg-surface: #E8E2D8;
+  --bg-elevated: #FFFFFF;
+  --bg-sunken: #DDD6CA;
+  --text-primary: #0C0F14;
+  --text-secondary: rgba(12, 15, 20, 0.68);
+  --text-muted: rgba(12, 15, 20, 0.44);
+  --border: rgba(12, 15, 20, 0.10);
+  --border-hover: rgba(12, 15, 20, 0.20);
+  --accent-subtle: rgba(212, 133, 58, 0.10);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s var(--ease-out), color 0.3s var(--ease-out);
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--sp-32); }
+.section { padding: var(--sp-96) 0; border-bottom: 1px solid var(--border); }
+.section-label {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: var(--sp-16); display: block;
+}
+.section-title {
+  font-family: var(--font-display); font-size: 28px; font-weight: 700;
+  line-height: 1.3; margin-bottom: var(--sp-48); max-width: 560px;
+}
+.preview-header {
+  position: sticky; top: 0; z-index: 100; background: var(--bg-base);
+  border-bottom: 1px solid var(--border); padding: var(--sp-16) 0;
+  transition: background 0.3s var(--ease-out);
+}
+.preview-header .container { display: flex; justify-content: space-between; align-items: center; }
+.preview-header h1 { font-family: var(--font-display); font-size: 20px; font-weight: 900; letter-spacing: -0.02em; }
+/* Logo: white PNG on dark, gradient text on light */
+.nav-logo-img { height: 28px; width: auto; display: block; }
+.light .nav-logo-img { display: none; }
+.nav-logo-text { display: none; font-family: var(--font-body); font-size: 22px; font-weight: 800; letter-spacing: -0.02em; background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-mid) 50%, var(--brand-light) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.light .nav-logo-text { display: block; }
+/* Hero logo */
+.hero-logo { height: 48px; width: auto; margin-bottom: var(--sp-24); }
+.light .hero-logo { display: none; }
+.hero-logo-text { display: none; font-family: var(--font-body); font-size: 40px; font-weight: 800; letter-spacing: -0.02em; background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-mid) 50%, var(--brand-light) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: var(--sp-24); }
+.light .hero-logo-text { display: block; }
+/* Sidebar logo */
+.sidebar-logo-img { height: 22px; width: auto; }
+.light .sidebar-logo-img { display: none; }
+.light .sidebar-brand-text { display: block !important; font-family: var(--font-body); font-weight: 800; font-size: 16px; background: linear-gradient(135deg, var(--brand-dark), var(--brand-mid), var(--brand-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.mode-toggle { display: flex; align-items: center; gap: var(--sp-8); font-size: 13px; color: var(--text-muted); cursor: pointer; user-select: none; }
+.mode-toggle-track { width: 40px; height: 22px; background: var(--border); border-radius: 11px; position: relative; transition: background 0.2s var(--ease-out); }
+.mode-toggle-track::after { content: ''; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; background: var(--accent); border-radius: 50%; transition: transform 0.2s var(--ease-out); }
+.light .mode-toggle-track::after { transform: translateX(18px); }
+
+.hero-mockup { padding: var(--sp-96) 0 var(--sp-64); border-bottom: 1px solid var(--border); }
+.hero-mockup .container { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-64); align-items: center; }
+.hero-label { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.06em; color: var(--accent); margin-bottom: var(--sp-24); display: inline-block; padding: var(--sp-4) var(--sp-12); border: 1px solid var(--accent); border-radius: var(--radius-sm); }
+.hero-title { font-family: var(--font-display); font-size: 56px; font-weight: 900; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: var(--sp-24); }
+.hero-title .accent-word { color: var(--accent); }
+.hero-sub { font-size: 17px; color: var(--text-secondary); line-height: 1.7; max-width: 440px; margin-bottom: var(--sp-32); }
+.hero-actions { display: flex; gap: var(--sp-12); }
+
+.terminal-mock { background: var(--bg-sunken); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; font-family: var(--font-mono); font-size: 13px; line-height: 1.7; }
+.terminal-bar { display: flex; align-items: center; gap: var(--sp-8); padding: var(--sp-12) var(--sp-16); border-bottom: 1px solid var(--border); }
+.terminal-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--border-hover); }
+.terminal-dot:first-child { background: var(--error); }
+.terminal-dot:nth-child(2) { background: var(--warning); }
+.terminal-dot:nth-child(3) { background: var(--success); }
+.terminal-bar span { font-size: 11px; color: var(--text-muted); margin-left: auto; }
+.terminal-body { padding: var(--sp-16) var(--sp-24); color: var(--text-secondary); }
+.terminal-body .prompt { color: var(--accent); }
+.terminal-body .result { color: var(--success); }
+.terminal-body .dim { color: var(--text-muted); }
+.terminal-body .highlight { color: var(--text-primary); font-weight: 500; }
+.terminal-line { margin-bottom: var(--sp-4); }
+
+.type-specimen { display: grid; gap: var(--sp-48); }
+.type-sample { padding-bottom: var(--sp-48); border-bottom: 1px solid var(--border); }
+.type-sample:last-child { border-bottom: none; padding-bottom: 0; }
+.type-meta { display: flex; gap: var(--sp-16); margin-bottom: var(--sp-16); align-items: baseline; flex-wrap: wrap; }
+.type-meta-name { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); padding: var(--sp-2) var(--sp-8); background: var(--accent-subtle); border-radius: var(--radius-sm); }
+.type-meta-detail { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+.type-display { font-family: var(--font-display); font-size: 56px; font-weight: 900; line-height: 1.2; letter-spacing: -0.03em; }
+.type-display-md { font-family: var(--font-display); font-size: 32px; font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; }
+.type-body { font-family: var(--font-body); font-size: 16px; line-height: 1.75; color: var(--text-secondary); max-width: 640px; }
+.type-mono { font-family: var(--font-mono); font-size: 14px; line-height: 1.7; color: var(--text-secondary); background: var(--bg-sunken); padding: var(--sp-24); border-radius: var(--radius-md); border: 1px solid var(--border); }
+
+.palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: var(--sp-12); }
+.palette-swatch { border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); }
+.palette-color { height: 80px; }
+.palette-info { padding: var(--sp-12); background: var(--bg-surface); }
+.palette-name { font-family: var(--font-body); font-size: 13px; font-weight: 500; margin-bottom: var(--sp-4); }
+.palette-hex { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-8); padding: var(--sp-12) var(--sp-24); font-family: var(--font-body); font-size: 14px; font-weight: 500; border-radius: var(--radius-md); border: none; cursor: pointer; transition: all 0.15s var(--ease-out); text-decoration: none; }
+.btn-primary { background: var(--accent); color: #FFFFFF; }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-secondary { background: transparent; color: var(--text-primary); border: 1px solid var(--border-hover); }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+.btn-ghost { background: transparent; color: var(--text-secondary); padding: var(--sp-8) var(--sp-16); }
+.btn-ghost:hover { color: var(--accent); }
+
+.component-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-32); }
+.component-group h4 { font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: var(--sp-16); }
+.btn-row { display: flex; gap: var(--sp-12); flex-wrap: wrap; margin-bottom: var(--sp-24); }
+
+.card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--sp-24); transition: border-color 0.15s var(--ease-out); }
+.card:hover { border-color: var(--border-hover); }
+.card-title { font-family: var(--font-display); font-size: 18px; font-weight: 700; margin-bottom: var(--sp-8); }
+.card-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+.input { width: 100%; padding: var(--sp-12) var(--sp-16); font-family: var(--font-body); font-size: 14px; color: var(--text-primary); background: var(--bg-sunken); border: 1px solid var(--border); border-radius: var(--radius-md); outline: none; transition: border-color 0.15s var(--ease-out); }
+.input:focus { border-color: var(--accent); }
+.input::placeholder { color: var(--text-muted); }
+.input-group { margin-bottom: var(--sp-16); }
+.input-label { display: block; font-size: 13px; font-weight: 500; color: var(--text-secondary); margin-bottom: var(--sp-8); }
+
+.alert { padding: var(--sp-12) var(--sp-16); border-radius: var(--radius-md); font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: var(--sp-8); margin-bottom: var(--sp-8); border-left: 3px solid; }
+.alert-success { background: rgba(61, 122, 95, 0.10); border-color: var(--success); color: var(--success); }
+.alert-warning { background: rgba(184, 115, 51, 0.10); border-color: var(--warning); color: var(--warning); }
+.alert-error { background: rgba(163, 58, 18, 0.10); border-color: var(--error); color: var(--error); }
+.alert-info { background: rgba(74, 127, 181, 0.10); border-color: var(--info); color: var(--info); }
+
+.contrast-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-12); }
+.contrast-card { border-radius: var(--radius-md); padding: var(--sp-24); border: 1px solid var(--border); }
+.contrast-card .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.6; margin-bottom: var(--sp-8); }
+.contrast-card .sample { font-size: 16px; font-weight: 500; line-height: 1.5; }
+
+.dashboard-layout { display: grid; grid-template-columns: 220px 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; min-height: 520px; }
+.dashboard-sidebar { background: var(--bg-sunken); padding: var(--sp-24) var(--sp-16); }
+.sidebar-brand { font-family: var(--font-display); font-size: 16px; font-weight: 900; margin-bottom: var(--sp-32); padding: 0 var(--sp-8); }
+.sidebar-nav-item { display: flex; align-items: center; gap: var(--sp-8); padding: var(--sp-8) var(--sp-12); font-size: 13px; color: var(--text-muted); border-radius: var(--radius-sm); margin-bottom: var(--sp-2); cursor: pointer; }
+.sidebar-nav-item:hover { color: var(--text-secondary); background: var(--bg-surface); }
+.sidebar-nav-item.active { color: var(--accent); background: var(--accent-subtle); font-weight: 500; }
+.sidebar-section-label { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); padding: var(--sp-16) var(--sp-12) var(--sp-8); }
+.dashboard-main { background: var(--bg-base); padding: var(--sp-32); }
+.dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--sp-32); }
+.dashboard-title { font-family: var(--font-display); font-size: 24px; font-weight: 700; }
+.stat-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-16); margin-bottom: var(--sp-32); }
+.stat-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--sp-24); }
+.stat-card-label { font-size: 12px; color: var(--text-muted); margin-bottom: var(--sp-8); }
+.stat-card-value { font-family: var(--font-mono); font-size: 32px; font-weight: 500; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.stat-card-change { font-family: var(--font-mono); font-size: 12px; margin-top: var(--sp-8); }
+.stat-card-change.up { color: var(--success); }
+.stat-card-change.down { color: var(--error); }
+
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.data-table th { text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); padding: var(--sp-12) var(--sp-16); border-bottom: 1px solid var(--border); }
+.data-table td { padding: var(--sp-12) var(--sp-16); border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table .cell-primary { color: var(--text-primary); font-weight: 500; }
+.data-table .cell-mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.data-table .cell-accent { color: var(--accent); }
+.status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: var(--sp-8); }
+.status-dot.online { background: var(--success); }
+.status-dot.warning { background: var(--warning); }
+.status-dot.error { background: var(--error); }
+
+.auth-mockup { max-width: 400px; margin: 0 auto; background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--sp-48); }
+.auth-title { font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: var(--sp-8); text-align: center; }
+.auth-sub { font-size: 14px; color: var(--text-muted); text-align: center; margin-bottom: var(--sp-32); }
+.auth-divider { display: flex; align-items: center; gap: var(--sp-12); margin: var(--sp-24) 0; font-size: 12px; color: var(--text-muted); }
+.auth-divider::before, .auth-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+@media (max-width: 768px) {
+  .hero-mockup .container { grid-template-columns: 1fr; gap: var(--sp-32); }
+  .hero-title { font-size: 36px; }
+  .component-grid { grid-template-columns: 1fr; }
+  .dashboard-layout { grid-template-columns: 1fr; }
+  .dashboard-sidebar { display: none; }
+  .stat-cards { grid-template-columns: 1fr; }
+  .contrast-grid { grid-template-columns: 1fr; }
+  .palette-grid { grid-template-columns: repeat(2, 1fr); }
+  .type-display { font-size: 36px; }
+}
+</style>
+</head>
+<body>
+<header class="preview-header">
+  <div class="container">
+    <div style="display:flex;align-items:center;">
+      <img src="assets/logo-white-sm.png" alt="AvalonX" class="nav-logo-img">
+      <span class="nav-logo-text">AvalonX</span>
+    </div>
+    <div class="mode-toggle" onclick="toggleMode()">
+      <span>Dark</span>
+      <div class="mode-toggle-track"></div>
+      <span>Light</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero-mockup">
+  <div class="container">
+    <div>
+      <img src="assets/logo-white-sm.png" alt="AvalonX" class="hero-logo">
+      <span class="hero-logo-text">AvalonX</span>
+      <div class="hero-label">Enterprise AI</div>
+      <h1 class="hero-title">문서 안에 묻혀 있는<br>판단을 <span class="accent-word">정확하게</span><br>꺼냅니다</h1>
+      <p class="hero-sub">기업 내부 문서와 데이터 시스템을 연결하여 지식 검색, 데이터 분석, 업무 자동화를 수행하는 온프레미스 AI 솔루션</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary">솔루션 보기</a>
+        <a href="#" class="btn btn-secondary">문의하기</a>
+      </div>
+    </div>
+    <div class="terminal-mock">
+      <div class="terminal-bar">
+        <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
+        <span>avalonx-search v2.4.1</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-line"><span class="prompt">$</span> avalonx search "2024년 보안 감사 결과"</div>
+        <div class="terminal-line">&nbsp;</div>
+        <div class="terminal-line"><span class="dim">Searching 14,832 documents...</span></div>
+        <div class="terminal-line">&nbsp;</div>
+        <div class="terminal-line"><span class="result">3 results</span> <span class="dim">(0.42s)</span></div>
+        <div class="terminal-line">&nbsp;</div>
+        <div class="terminal-line"><span class="highlight">1.</span> 보안감사보고서_2024_Q4.pdf</div>
+        <div class="terminal-line">&nbsp;&nbsp;&nbsp;<span class="dim">confidence:</span> <span class="result">0.97</span> &nbsp;<span class="dim">pages: 12-15</span></div>
+        <div class="terminal-line">&nbsp;</div>
+        <div class="terminal-line"><span class="highlight">2.</span> ISMS_인증심사_결과보고.docx</div>
+        <div class="terminal-line">&nbsp;&nbsp;&nbsp;<span class="dim">confidence:</span> <span class="result">0.91</span> &nbsp;<span class="dim">pages: 3-7</span></div>
+        <div class="terminal-line">&nbsp;</div>
+        <div class="terminal-line"><span class="highlight">3.</span> 내부감사_조치계획_2024.xlsx</div>
+        <div class="terminal-line">&nbsp;&nbsp;&nbsp;<span class="dim">confidence:</span> <span class="result">0.84</span> &nbsp;<span class="dim">pages: 1</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-label">01 Typography</span>
+    <h2 class="section-title">서체 시스템</h2>
+    <div class="type-specimen">
+      <div class="type-sample">
+        <div class="type-meta"><span class="type-meta-name">Display</span><span class="type-meta-detail">Noto Serif KR &middot; 900 &middot; 56px &middot; -0.03em</span></div>
+        <div class="type-display">데이터는 연결되어야<br>가치가 됩니다</div>
+      </div>
+      <div class="type-sample">
+        <div class="type-meta"><span class="type-meta-name">Heading</span><span class="type-meta-detail">Noto Serif KR &middot; 700 &middot; 32px &middot; -0.02em</span></div>
+        <div class="type-display-md">기업 환경에 최적화된 온프레미스 AI</div>
+      </div>
+      <div class="type-sample">
+        <div class="type-meta"><span class="type-meta-name">Body</span><span class="type-meta-detail">Pretendard Variable &middot; 400 &middot; 16px &middot; 1.75 line-height</span></div>
+        <div class="type-body">AvalonX는 기업의 문서, 데이터베이스, API를 연결해 지식 검색, 데이터 분석, 업무 자동화를 구현하는 엔터프라이즈 AI 솔루션 기업입니다. 방대한 내부 문서에서 원하는 정보를 찾는 데 평균 30분 이상 소요되던 시간을 3분 이내로 단축하고, SQL과 리포트 작성의 장벽을 낮춰 현업 사용자가 데이터에 직접 접근할 수 있도록 합니다.</div>
+      </div>
+      <div class="type-sample">
+        <div class="type-meta"><span class="type-meta-name">Mono</span><span class="type-meta-detail">JetBrains Mono &middot; 400 &middot; 14px</span></div>
+        <div class="type-mono">avalonx deploy --target production --model ko-large-v3<br>Deploying to: on-premise (192.168.1.100)<br>Model size: 7.2GB | Index: 14,832 docs | Status: ready<br>Endpoint: https://ai.internal.corp/v2/search</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-label">02 Color</span>
+    <h2 class="section-title">컬러 팔레트</h2>
+    <h4 style="font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:var(--sp-16);">Brand (Logo Gradient)</h4>
+    <div class="palette-grid" style="margin-bottom:var(--sp-32);">
+      <div class="palette-swatch"><div class="palette-color" style="background:#0A3DFF;"></div><div class="palette-info"><div class="palette-name">Brand Dark</div><div class="palette-hex">#0A3DFF</div></div></div>
+      <div class="palette-swatch"><div class="palette-color" style="background:#1E6BFF;"></div><div class="palette-info"><div class="palette-name">Brand Mid</div><div class="palette-hex">#1E6BFF</div></div></div>
+      <div class="palette-swatch"><div class="palette-color" style="background:#4FA3FF;"></div><div class="palette-info"><div class="palette-name">Brand Light</div><div class="palette-hex">#4FA3FF</div></div></div>
+      <div class="palette-swatch"><div class="palette-color" style="background:linear-gradient(135deg, #0A3DFF 0%, #1E6BFF 50%, #4FA3FF 100%);"></div><div class="palette-info"><div class="palette-name">Logo Gradient</div><div class="palette-hex">135deg blend</div></div></div>
+    </div>
+    <h4 style="font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:var(--sp-16);">Backgrounds</h4>
+    <div class="palette-grid" style="margin-bottom:var(--sp-32);">
+      <div class="palette-swatch"><div class="palette-color" style="background:#0C0F14;"></div><div class="palette-info"><div class="palette-name">Base</div><div class="palette-hex">#0C0F14</div></div></div>
+      <div class="palette-swatch"><div class="palette-color" style="background:#161A22;"></div><div class="palette-info"><div class="palette-name">Surface</div><div class="palette-hex">#161A22</div></div></div>
+      <div class="palette-swatch"><div class="palette-color" style="background:#1C2029;"></div><div class="palette-info"><div class="palette-name">Elevated</div><div class="palette-hex">#1C2029</div></div></div>
+      <div class="palette-swatch"><div class="palette-color" style="background:#08090D;"></div><div class="palette-info"><div class="palette-name">Sunken</div><div class="palette-hex">#08090D</div></div></div>
+    </div>
+    <h4 style="font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:var(--sp-16);">Text & Accent</h4>
+    <div class="palette-grid" style="margin-bottom:var(--sp-32);">
+      <div class="palette-swatch"><div class="palette-color" style="background:#F0EBE3;"></div><div class="palette-info"><div class="palette-name">Text Primary</div><div class="palette-hex">#F0EBE3</div></div></div>
+      <div class="palette-swatch"><div class="palette-color" style="background:rgba(240,235,227,0.72);border:1px solid rgba(200,188,172,0.12);"></div><div class="palette-info"><div class="palette-name">Text Secondary</div><div class="palette-hex">rgba(..., 0.72)</div></div></div>
+      <div class="palette-swatch"><div class="palette-color" style="background:#D4853A;"></div><div class="palette-info"><div class="palette-name">Accent</div><div class="palette-hex">#D4853A</div></div></div>
+      <div class="palette-swatch"><div class="palette-color" style="background:#B86E28;"></div><div class="palette-info"><div class="palette-name">Accent Hover</div><div class="palette-hex">#B86E28</div></div></div>
+    </div>
+    <h4 style="font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:var(--sp-16);">Semantic</h4>
+    <div class="palette-grid">
+      <div class="palette-swatch"><div class="palette-color" style="background:#3D7A5F;"></div><div class="palette-info"><div class="palette-name">Success</div><div class="palette-hex">#3D7A5F</div></div></div>
+      <div class="palette-swatch"><div class="palette-color" style="background:#B87333;"></div><div class="palette-info"><div class="palette-name">Warning</div><div class="palette-hex">#B87333</div></div></div>
+      <div class="palette-swatch"><div class="palette-color" style="background:#A33A12;"></div><div class="palette-info"><div class="palette-name">Error</div><div class="palette-hex">#A33A12</div></div></div>
+      <div class="palette-swatch"><div class="palette-color" style="background:#4A7FB5;"></div><div class="palette-info"><div class="palette-name">Info</div><div class="palette-hex">#4A7FB5</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-label">03 Components</span>
+    <h2 class="section-title">UI 컴포넌트</h2>
+    <div class="component-grid">
+      <div class="component-group">
+        <h4>Buttons</h4>
+        <div class="btn-row">
+          <button class="btn btn-primary">Primary</button>
+          <button class="btn btn-secondary">Secondary</button>
+          <button class="btn btn-ghost">Ghost</button>
+        </div>
+        <h4>Alerts</h4>
+        <div class="alert alert-success">문서 인덱싱이 완료되었습니다</div>
+        <div class="alert alert-warning">API 응답 지연이 감지되었습니다</div>
+        <div class="alert alert-error">인증 토큰이 만료되었습니다</div>
+        <div class="alert alert-info">새 모델 버전이 사용 가능합니다</div>
+      </div>
+      <div class="component-group">
+        <h4>Cards</h4>
+        <div class="card" style="margin-bottom:var(--sp-16);">
+          <div class="card-title">지식 검색 엔진</div>
+          <div class="card-desc">14,000개 이상의 내부 문서를 실시간으로 검색하고, 자연어 질의로 정확한 답변을 제공합니다.</div>
+        </div>
+        <h4>Form Inputs</h4>
+        <div class="input-group"><label class="input-label">검색어를 입력하세요</label><input class="input" type="text" placeholder="예: 2024년 보안 감사 결과"></div>
+        <div class="input-group"><label class="input-label">API 엔드포인트</label><input class="input" type="text" value="https://ai.internal.corp/v2/search" readonly></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-label">04 Contrast</span>
+    <h2 class="section-title">배경/텍스트 조합</h2>
+    <div class="contrast-grid">
+      <div class="contrast-card" style="background:var(--bg-base);color:var(--text-primary);"><div class="label">Primary on Base</div><div class="sample">기업 AI 솔루션</div></div>
+      <div class="contrast-card" style="background:var(--bg-surface);color:var(--text-primary);"><div class="label">Primary on Surface</div><div class="sample">기업 AI 솔루션</div></div>
+      <div class="contrast-card" style="background:var(--bg-base);color:var(--text-secondary);"><div class="label">Secondary on Base</div><div class="sample">문서 검색 및 분석</div></div>
+      <div class="contrast-card" style="background:var(--bg-base);color:var(--accent);"><div class="label">Accent on Base</div><div class="sample" style="font-family:var(--font-mono);font-size:14px;">confidence: 0.97</div></div>
+      <div class="contrast-card" style="background:var(--accent);color:#FFFFFF;"><div class="label" style="color:rgba(255,255,255,0.7);">White on Accent</div><div class="sample">솔루션 보기</div></div>
+      <div class="contrast-card" style="background:var(--bg-sunken);color:var(--text-muted);"><div class="label">Muted on Sunken</div><div class="sample" style="font-family:var(--font-mono);font-size:13px;">last indexed: 2h ago</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-label">05 Dashboard Mockup</span>
+    <h2 class="section-title">대시보드 레이아웃</h2>
+    <div class="dashboard-layout">
+      <div class="dashboard-sidebar">
+        <div class="sidebar-brand">
+          <img src="assets/logo-white-sm.png" alt="AvalonX" class="sidebar-logo-img">
+          <span class="sidebar-brand-text" style="display:none;">AvalonX</span>
+        </div>
+        <div class="sidebar-section-label">Main</div>
+        <div class="sidebar-nav-item active">Overview</div>
+        <div class="sidebar-nav-item">Documents</div>
+        <div class="sidebar-nav-item">Search Logs</div>
+        <div class="sidebar-nav-item">Analytics</div>
+        <div class="sidebar-section-label">Settings</div>
+        <div class="sidebar-nav-item">Models</div>
+        <div class="sidebar-nav-item">Indexing</div>
+        <div class="sidebar-nav-item">API Keys</div>
+        <div class="sidebar-nav-item">Team</div>
+      </div>
+      <div class="dashboard-main">
+        <div class="dashboard-header">
+          <div class="dashboard-title">Overview</div>
+          <button class="btn btn-secondary" style="padding:var(--sp-8) var(--sp-16);font-size:13px;">Export</button>
+        </div>
+        <div class="stat-cards">
+          <div class="stat-card"><div class="stat-card-label">총 문서 수</div><div class="stat-card-value">14,832</div><div class="stat-card-change up">+342 this week</div></div>
+          <div class="stat-card"><div class="stat-card-label">일일 검색량</div><div class="stat-card-value">2,847</div><div class="stat-card-change up">+12.4%</div></div>
+          <div class="stat-card"><div class="stat-card-label">평균 응답 시간</div><div class="stat-card-value">0.42s</div><div class="stat-card-change up">-0.08s</div></div>
+        </div>
+        <table class="data-table">
+          <thead><tr><th>Document</th><th>Type</th><th>Status</th><th>Last Indexed</th><th>Queries</th></tr></thead>
+          <tbody>
+            <tr><td class="cell-primary">보안감사보고서_2024_Q4.pdf</td><td>PDF</td><td><span class="status-dot online"></span>Indexed</td><td class="cell-mono">2h ago</td><td class="cell-mono cell-accent">847</td></tr>
+            <tr><td class="cell-primary">ISMS_인증심사_결과보고.docx</td><td>DOCX</td><td><span class="status-dot online"></span>Indexed</td><td class="cell-mono">4h ago</td><td class="cell-mono cell-accent">623</td></tr>
+            <tr><td class="cell-primary">내부감사_조치계획_2024.xlsx</td><td>XLSX</td><td><span class="status-dot warning"></span>Re-indexing</td><td class="cell-mono">12h ago</td><td class="cell-mono cell-accent">412</td></tr>
+            <tr><td class="cell-primary">데이터센터_이전계획_v3.pdf</td><td>PDF</td><td><span class="status-dot online"></span>Indexed</td><td class="cell-mono">1d ago</td><td class="cell-mono cell-accent">298</td></tr>
+            <tr><td class="cell-primary">API_명세서_v2.1.md</td><td>MD</td><td><span class="status-dot error"></span>Error</td><td class="cell-mono">3d ago</td><td class="cell-mono cell-accent">156</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-bottom:none;">
+  <div class="container">
+    <span class="section-label">06 Auth Mockup</span>
+    <h2 class="section-title">로그인 화면</h2>
+    <div class="auth-mockup">
+      <div style="text-align:center;margin-bottom:var(--sp-8);">
+        <img src="assets/logo-white-sm.png" alt="AvalonX" style="height:32px;width:auto;margin:0 auto;display:inline-block;">
+      </div>
+      <div class="auth-sub">엔터프라이즈 AI 플랫폼에 로그인하세요</div>
+      <button class="btn btn-secondary" style="width:100%;margin-bottom:var(--sp-12);">SSO로 로그인</button>
+      <div class="auth-divider">또는</div>
+      <div class="input-group"><label class="input-label">이메일</label><input class="input" type="email" placeholder="name@company.com"></div>
+      <div class="input-group"><label class="input-label">비밀번호</label><input class="input" type="password" placeholder="&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;"></div>
+      <button class="btn btn-primary" style="width:100%;margin-top:var(--sp-8);">로그인</button>
+      <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:var(--sp-16);">비밀번호를 잊으셨나요? <span style="color:var(--accent);cursor:pointer;">재설정</span></p>
+    </div>
+  </div>
+</section>
+
+<footer style="padding:var(--sp-48) 0;text-align:center;">
+  <p style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);">AvalonX Design System Preview &middot; Generated by /design-consultation</p>
+</footer>
+
+<script>function toggleMode(){document.documentElement.classList.toggle('light');}</script>
+</body>
+</html>

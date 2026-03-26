@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | AvalonX</title>
+  <meta name="description" content="AvalonX는 기업 데이터와 업무 흐름을 연결해 실질적인 성과를 만드는 엔터프라이즈 AI 솔루션 기업입니다." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: var(--nav-height); left: 0; right: 0; background: rgba(12, 15, 20, 0.98); backdrop-filter: blur(20px); padding: 16px 24px; border-bottom: 1px solid var(--border); gap: 4px; }
+    .about-hero-quote { margin-top: 48px; padding: 40px; background: rgba(30, 107, 255, 0.06); border: 1px solid rgba(30, 107, 255, 0.2); border-radius: var(--radius-xl); text-align: center; font-size: 22px; font-weight: 600; line-height: 1.7; color: var(--text-primary); max-width: 760px; margin-left: auto; margin-right: auto; }
+    .about-hero-quote span { background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  </style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="AvalonX 홈"><img src="assets/logo-white-sm.png" alt="AvalonX" class="nav-logo-img" /></a>
+    <div class="nav-links">
+      <a href="index.html">홈</a>
+      <a href="technology.html">기술</a>
+      <a href="use-cases.html">활용 사례</a>
+      <a href="about.html" class="active">회사 소개</a>
+      <a href="contact.html">문의</a>
+    </div>
+    <div class="nav-cta">
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <span class="section-label" style="margin:0 auto 20px;">About AvalonX</span>
+      <h1>기업 AI를 <span class="gradient-text">현업의 일</span><br>속으로 가져옵니다</h1>
+      <p>복잡한 기술 설명보다 실제로 작동하는 업무 흐름과 실행 가능한 AI 구조를 먼저 설계하는 팀입니다.</p>
+    </div>
+  </div>
+</div>
+
+<section class="about-section">
+  <div class="container">
+    <div class="about-hero-quote reveal"><span>"기업이 이미 보유한 정보가</span><br>더 빨리 찾히고 더 쉽게 이해되며<br>실제 업무 실행으로 이어지도록 만듭니다."</div>
+    <div class="vision-mission-grid" style="margin-top:48px;">
+      <div class="vm-card vision reveal stagger-1"><div class="vm-label">Vision</div><h2>누구나 사용할 수 있는 기업 AI</h2><p>AI가 일부 전문가의 도구에 머무르지 않고, 모든 부서가 성과를 내는 실무 도구가 되는 환경을 지향합니다.</p></div>
+      <div class="vm-card mission reveal stagger-2"><div class="vm-label">Mission</div><h2>데이터와 업무 사이의 간극 해소</h2><p>문서, 데이터, 시스템을 연결해 검색과 분석, 자동화가 하나의 흐름으로 이어지는 엔터프라이즈 AI를 구축합니다.</p></div>
+      <div class="vm-card position reveal stagger-3" style="grid-column:1 / -1;"><div class="vm-label">Positioning</div><h2>현업 중심 엔터프라이즈 AI 파트너</h2><p style="margin-bottom:24px;">AvalonX는 Core, Agent, Insight, Automation 구조를 기반으로 기업 데이터와 시스템을 연결하고, 실제 실행까지 이어지는 온프레미스 AI 플랫폼을 설계합니다.</p><div class="position-tags"><span class="position-tag">AvalonX Core</span><span class="position-tag">Agent</span><span class="position-tag">Insight</span><span class="position-tag">Automation</span><span class="position-tag">On-Premise AI</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:80px 0; background:var(--bg-secondary);">
+  <div class="container">
+    <div style="text-align:center; max-width:600px; margin:0 auto;" class="reveal"><span class="section-label">Core Values</span><h2 class="section-title">우리가 중요하게 보는 기준</h2></div>
+    <div class="diff-grid" style="margin-top:60px;">
+      <div class="diff-item reveal stagger-1"><div class="diff-num">01</div><div class="diff-item-content"><h4>신뢰</h4><p>답변과 결과에는 근거가 있어야 합니다. 출처와 맥락을 함께 보여주는 AI 경험을 우선합니다.</p></div></div>
+      <div class="diff-item reveal stagger-2"><div class="diff-num">02</div><div class="diff-item-content"><h4>보안</h4><p>기업 데이터는 가장 중요한 자산입니다. 배포 구조와 권한 체계를 포함해 보안을 기본값으로 설계합니다.</p></div></div>
+      <div class="diff-item reveal stagger-3"><div class="diff-num">03</div><div class="diff-item-content"><h4>실행</h4><p>예쁜 데모보다 중요한 것은 실제 운영입니다. 현업이 바로 쓸 수 있는 수준의 실행 흐름을 만듭니다.</p></div></div>
+      <div class="diff-item reveal stagger-4"><div class="diff-num">04</div><div class="diff-item-content"><h4>통합</h4><p>문서, 데이터베이스, API가 분리된 상태로는 효과가 제한적입니다. 기존 환경과 자연스럽게 연결합니다.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <span class="section-label" style="margin:0 auto 24px;">Contact Us</span>
+      <h2>귀사의 환경에 맞는 AI 도입 전략을 함께 설계해보세요</h2>
+      <p>현재 업무 흐름과 데이터 구조를 기준으로 적용 가능한 우선 과제를 함께 정리해드립니다.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg">문의하기</a>
+        <a href="technology.html" class="btn btn-secondary btn-lg">기술 보기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand"><a href="index.html" class="nav-logo footer-logo"><img src="assets/logo-white-sm.png" alt="AvalonX" class="nav-logo-img" /></a><p>기업의 문서와 데이터를 연결해<br>실행 가능한 AI 업무 환경을 구축합니다.</p></div>
+      <div class="footer-col"><h5>서비스</h5><ul><li><a href="technology.html">기술</a></li><li><a href="use-cases.html">활용 사례</a></li></ul></div>
+      <div class="footer-col"><h5>회사</h5><ul><li><a href="about.html">회사 소개</a></li><li><a href="contact.html">문의</a></li></ul></div>
+      <div class="footer-col"><h5>연락</h5><ul><li><a href="contact.html">문의하기</a></li><li><a href="mailto:contact@avalonx.ai">contact@avalonx.ai</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 AvalonX. All rights reserved.</span><span>Enterprise AI Solution Company</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
