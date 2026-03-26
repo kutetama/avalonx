@@ -1,148 +1,270 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AvalonX | Where Business Thrives with AI</title>
-  <meta name="description" content="AvalonX는 기업의 문서, 데이터베이스, API를 연결해 지식 검색, 데이터 분석, 업무 자동화를 구현하는 엔터프라이즈 AI 솔루션 기업입니다." />
+  <meta name="description"
+    content="AvalonX는 기업의 문서, 데이터베이스, API를 연결해 지식 검색, 데이터 분석, 업무 자동화를 구현하는 엔터프라이즈 AI 솔루션 기업입니다." />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: var(--nav-height); left: 0; right: 0; background: rgba(12, 15, 20, 0.98); backdrop-filter: blur(20px); padding: 16px 24px; border-bottom: 1px solid var(--border); gap: 4px; }
-    .stats-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-top: 64px; }
-    .stat-item { background: var(--bg-secondary); padding: 28px 24px; text-align: center; }
-    .stat-num { font-family: var(--font-mono); font-size: 36px; font-weight: 500; letter-spacing: -0.02em; color: var(--accent); font-variant-numeric: tabular-nums; }
-    .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: rgba(12, 15, 20, 0.98);
+      backdrop-filter: blur(20px);
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      gap: 4px;
+    }
+
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 64px;
+    }
+
+    .stat-item {
+      background: var(--bg-secondary);
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: var(--font-mono);
+      font-size: 36px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
   </style>
 </head>
+
 <body>
-<nav class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="AvalonX 홈">
-      <img src="assets/logo-white-sm.png" alt="AvalonX" class="nav-logo-img" />
-    </a>
-    <div class="nav-links">
-      <a href="index.html" class="active">홈</a>
-      <a href="technology.html">기술</a>
-      <a href="use-cases.html">활용 사례</a>
-      <a href="about.html">회사 소개</a>
-      <a href="contact.html">문의</a>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="AvalonX 홈">
+        <img src="assets/logo-white-sm.png" alt="AvalonX" class="nav-logo-img" />
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="active">홈</a>
+        <a href="technology.html">기술</a>
+        <a href="use-cases.html">활용 사례</a>
+        <a href="about.html">회사 소개</a>
+        <a href="contact.html">문의</a>
+      </div>
+      <div class="nav-cta">
+        <button class="nav-mobile-toggle" id="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    <div class="nav-cta">
-      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
+  </nav>
 
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-text">
-        <div class="hero-badge"><span>Enterprise AI</span></div>
-        <h1>문서 안에 묻혀 있는<br>판단을 <span class="accent-word">정확하게</span><br>꺼냅니다</h1>
-        <p class="hero-sub">
-          기업 내부 문서와 데이터 시스템을 연결하여
-          지식 검색, 데이터 분석, 업무 자동화를 수행하는
-          온프레미스 AI 솔루션
-        </p>
-        <div class="hero-actions">
-          <a href="technology.html" class="btn btn-primary btn-lg">기술 보기</a>
-          <a href="contact.html" class="btn btn-secondary btn-lg">문의하기</a>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge"><span>Enterprise AI</span></div>
+          <h1>데이터 안에 묻혀 있는<br>판단을 <span class="accent-word">정확하게</span><br>꺼냅니다</h1>
+          <p class="hero-sub">
+            기업 내부 문서와 데이터 시스템을 연결하여
+            지식 검색, 데이터 분석, 업무 자동화를 수행하는
+            온프레미스 AI 솔루션
+          </p>
+          <div class="hero-actions">
+            <a href="technology.html" class="btn btn-primary btn-lg">기술 보기</a>
+            <a href="contact.html" class="btn btn-secondary btn-lg">문의하기</a>
+          </div>
+        </div>
+        <div class="hero-terminal">
+          <div class="terminal-bar">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <span>avalonx-search v2.4.1</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line"><span class="prompt">$</span> avalonx search "2024년 보안 감사 결과"</div>
+            <div class="terminal-line">&nbsp;</div>
+            <div class="terminal-line"><span class="dim">Searching 14,832 documents...</span></div>
+            <div class="terminal-line">&nbsp;</div>
+            <div class="terminal-line"><span class="result">3 results</span> <span class="dim">(0.42s)</span></div>
+            <div class="terminal-line">&nbsp;</div>
+            <div class="terminal-line"><span class="highlight">1.</span> 보안감사보고서_2024_Q4.pdf</div>
+            <div class="terminal-line">&nbsp;&nbsp;&nbsp;<span class="dim">confidence:</span> <span
+                class="result">0.97</span> &nbsp;<span class="dim">pages: 12-15</span></div>
+            <div class="terminal-line">&nbsp;</div>
+            <div class="terminal-line"><span class="highlight">2.</span> ISMS_인증심사_결과보고.docx</div>
+            <div class="terminal-line">&nbsp;&nbsp;&nbsp;<span class="dim">confidence:</span> <span
+                class="result">0.91</span> &nbsp;<span class="dim">pages: 3-7</span></div>
+            <div class="terminal-line">&nbsp;</div>
+            <div class="terminal-line"><span class="highlight">3.</span> 내부감사_조치계획_2024.xlsx</div>
+            <div class="terminal-line">&nbsp;&nbsp;&nbsp;<span class="dim">confidence:</span> <span
+                class="result">0.84</span> &nbsp;<span class="dim">pages: 1</span></div>
+          </div>
         </div>
       </div>
-      <div class="hero-terminal">
-        <div class="terminal-bar">
-          <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
-          <span>avalonx-search v2.4.1</span>
+      <div class="stats-bar reveal stagger-2">
+        <div class="stat-item">
+          <div class="stat-num">3x</div>
+          <div class="stat-label">문서 탐색 속도 향상</div>
         </div>
-        <div class="terminal-body">
-          <div class="terminal-line"><span class="prompt">$</span> avalonx search "2024년 보안 감사 결과"</div>
-          <div class="terminal-line">&nbsp;</div>
-          <div class="terminal-line"><span class="dim">Searching 14,832 documents...</span></div>
-          <div class="terminal-line">&nbsp;</div>
-          <div class="terminal-line"><span class="result">3 results</span> <span class="dim">(0.42s)</span></div>
-          <div class="terminal-line">&nbsp;</div>
-          <div class="terminal-line"><span class="highlight">1.</span> 보안감사보고서_2024_Q4.pdf</div>
-          <div class="terminal-line">&nbsp;&nbsp;&nbsp;<span class="dim">confidence:</span> <span class="result">0.97</span> &nbsp;<span class="dim">pages: 12-15</span></div>
-          <div class="terminal-line">&nbsp;</div>
-          <div class="terminal-line"><span class="highlight">2.</span> ISMS_인증심사_결과보고.docx</div>
-          <div class="terminal-line">&nbsp;&nbsp;&nbsp;<span class="dim">confidence:</span> <span class="result">0.91</span> &nbsp;<span class="dim">pages: 3-7</span></div>
-          <div class="terminal-line">&nbsp;</div>
-          <div class="terminal-line"><span class="highlight">3.</span> 내부감사_조치계획_2024.xlsx</div>
-          <div class="terminal-line">&nbsp;&nbsp;&nbsp;<span class="dim">confidence:</span> <span class="result">0.84</span> &nbsp;<span class="dim">pages: 1</span></div>
+        <div class="stat-item">
+          <div class="stat-num">80%</div>
+          <div class="stat-label">반복 업무 자동화 가능</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">기업 환경 중심 보안 설계</div>
         </div>
       </div>
     </div>
-    <div class="stats-bar reveal stagger-2">
-      <div class="stat-item"><div class="stat-num">3x</div><div class="stat-label">문서 탐색 속도 향상</div></div>
-      <div class="stat-item"><div class="stat-num">80%</div><div class="stat-label">반복 업무 자동화 가능</div></div>
-      <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">기업 환경 중심 보안 설계</div></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="problem">
-  <div class="container">
-    <div class="problem-grid">
-      <div class="reveal-left">
-        <span class="section-label">Problem</span>
-        <h2 class="section-title">기업 데이터는 쌓이지만<br>업무 성과로 이어지지 않습니다</h2>
-        <p class="section-subtitle" style="margin-top:16px;">정보는 많지만 연결되지 않고, 분석은 가능하지만 느리며, 반복 업무는 여전히 사람 손을 타고 있습니다.</p>
-      </div>
-      <div class="problem-items reveal-right">
-        <div class="problem-item stagger-1"><div class="problem-icon">🔍</div><div class="problem-item-text"><h4>필요한 문서를 찾기까지 많은 시간이 소요됩니다</h4><p>방대한 내부 문서에서 원하는 정보를 찾는 데 평균 30분 이상이 낭비됩니다</p></div></div>
-        <div class="problem-item stagger-2"><div class="problem-icon">📊</div><div class="problem-item-text"><h4>데이터 분석은 여전히 전문가에게 의존합니다</h4><p>SQL과 리포트 작성 장벽으로 현업 사용자가 데이터에 접근하기 어렵습니다</p></div></div>
-        <div class="problem-item stagger-3"><div class="problem-icon">🔄</div><div class="problem-item-text"><h4>보고서 작성과 업무는 반복적으로 수행됩니다</h4><p>동일한 형식의 반복 업무가 핵심 과제에 집중할 시간을 빼앗습니다</p></div></div>
+  <section class="problem">
+    <div class="container">
+      <div class="problem-grid">
+        <div class="reveal-left">
+          <span class="section-label">Problem</span>
+          <h2 class="section-title">기업 데이터는 쌓이지만<br>업무 성과로 이어지지 않습니다</h2>
+          <p class="section-subtitle" style="margin-top:16px;">정보는 많지만 연결되지 않고, 분석은 가능하지만 느리며, 반복 업무는 여전히 사람 손을 타고 있습니다.
+          </p>
+        </div>
+        <div class="problem-items reveal-right">
+          <div class="problem-item stagger-1">
+            <div class="problem-icon">🔍</div>
+            <div class="problem-item-text">
+              <h4>필요한 문서를 찾기까지 많은 시간이 소요됩니다</h4>
+              <p>방대한 내부 문서에서 원하는 정보를 찾는 데 평균 30분 이상이 낭비됩니다</p>
+            </div>
+          </div>
+          <div class="problem-item stagger-2">
+            <div class="problem-icon">📊</div>
+            <div class="problem-item-text">
+              <h4>데이터 분석은 여전히 전문가에게 의존합니다</h4>
+              <p>SQL과 리포트 작성 장벽으로 현업 사용자가 데이터에 접근하기 어렵습니다</p>
+            </div>
+          </div>
+          <div class="problem-item stagger-3">
+            <div class="problem-icon">🔄</div>
+            <div class="problem-item-text">
+              <h4>보고서 작성과 업무는 반복적으로 수행됩니다</h4>
+              <p>동일한 형식의 반복 업무가 핵심 과제에 집중할 시간을 빼앗습니다</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="capabilities">
-  <div class="container">
-    <div style="text-align:center; max-width:720px; margin:0 auto;" class="reveal">
-      <span class="section-label">Capabilities</span>
-      <h2 class="section-title">핵심 기능</h2>
-      <p class="section-subtitle" style="margin:0 auto;">단순 챗봇이 아니라 검색, 분석, 실행이 이어지는 엔터프라이즈 AI 레이어를 제공합니다.</p>
-    </div>
+  <section class="capabilities">
+    <div class="container">
+      <div style="text-align:center; max-width:720px; margin:0 auto;" class="reveal">
+        <span class="section-label">Capabilities</span>
+        <h2 class="section-title">핵심 기능</h2>
+        <p class="section-subtitle" style="margin:0 auto;">단순 챗봇이 아니라 검색, 분석, 실행이 이어지는 엔터프라이즈 AI 레이어를 제공합니다.</p>
+      </div>
       <div class="capabilities-grid">
-        <div class="cap-card blue reveal stagger-1"><span class="cap-icon">🔍</span><h3>Knowledge Search</h3><p>기업 내부 문서를 빠르게 검색하고 활용하여 필요한 정보를 즉시 획득합니다</p><ul class="cap-list"><li>문서 검색</li><li>질문 응답</li><li>문서 요약</li></ul></div>
-        <div class="cap-card purple reveal stagger-2"><span class="cap-icon">📊</span><h3>Data Analysis</h3><p>데이터를 자연어로 분석하고 인사이트를 도출하여 의사결정을 가속화합니다</p><ul class="cap-list"><li>자연어 기반 데이터 조회</li><li>자동 분석</li><li>리포트 생성</li></ul></div>
-        <div class="cap-card teal reveal stagger-3"><span class="cap-icon">⚡</span><h3>Task Automation</h3><p>업무를 자동으로 실행하고 처리하여 반복적인 작업에서 벗어납니다</p><ul class="cap-list"><li>API 연동</li><li>업무 프로세스 자동화</li><li>반복 작업 제거</li></ul></div>
-      </div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <div class="container">
-    <div class="cta-inner reveal">
-      <span class="section-label" style="margin:0 auto 24px;">Get Started</span>
-      <h2>귀사의 AI 도입 우선순위를 함께 정리해드립니다</h2>
-      <p>현재 데이터 환경과 업무 흐름을 바탕으로 가장 빠르게 효과를 낼 수 있는 적용 시나리오를 제안합니다.</p>
-      <div class="cta-actions">
-        <a href="contact.html" class="btn btn-primary btn-lg">상담 문의</a>
-        <a href="use-cases.html" class="btn btn-secondary btn-lg">활용 사례 보기</a>
+        <div class="cap-card blue reveal stagger-1"><span class="cap-icon">🔍</span>
+          <h3>Knowledge Search</h3>
+          <p>기업 내부 문서를 빠르게 검색하고 활용하여 필요한 정보를 즉시 획득합니다</p>
+          <ul class="cap-list">
+            <li>문서 검색</li>
+            <li>질문 응답</li>
+            <li>문서 요약</li>
+          </ul>
+        </div>
+        <div class="cap-card purple reveal stagger-2"><span class="cap-icon">📊</span>
+          <h3>Data Analysis</h3>
+          <p>데이터를 자연어로 분석하고 인사이트를 도출하여 의사결정을 가속화합니다</p>
+          <ul class="cap-list">
+            <li>자연어 기반 데이터 조회</li>
+            <li>자동 분석</li>
+            <li>리포트 생성</li>
+          </ul>
+        </div>
+        <div class="cap-card teal reveal stagger-3"><span class="cap-icon">⚡</span>
+          <h3>Task Automation</h3>
+          <p>업무를 자동으로 실행하고 처리하여 반복적인 작업에서 벗어납니다</p>
+          <ul class="cap-list">
+            <li>API 연동</li>
+            <li>업무 프로세스 자동화</li>
+            <li>반복 작업 제거</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo footer-logo"><img src="assets/logo-white-sm.png" alt="AvalonX" class="nav-logo-img" /></a>
-        <p>기업의 문서와 데이터를 연결해<br>실행 가능한 AI 업무 환경을 구축합니다.</p>
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <span class="section-label" style="margin:0 auto 24px;">Get Started</span>
+        <h2>귀사의 AI 도입 우선순위를 함께 정리해드립니다</h2>
+        <p>현재 데이터 환경과 업무 흐름을 바탕으로 가장 빠르게 효과를 낼 수 있는 적용 시나리오를 제안합니다.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg">상담 문의</a>
+          <a href="use-cases.html" class="btn btn-secondary btn-lg">활용 사례 보기</a>
+        </div>
       </div>
-      <div class="footer-col"><h5>서비스</h5><ul><li><a href="technology.html">기술</a></li><li><a href="use-cases.html">활용 사례</a></li></ul></div>
-      <div class="footer-col"><h5>회사</h5><ul><li><a href="about.html">회사 소개</a></li><li><a href="contact.html">문의</a></li></ul></div>
-      <div class="footer-col"><h5>연락</h5><ul><li><a href="contact.html">문의하기</a></li><li><a href="mailto:contact@avalonx.ai">contact@avalonx.ai</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 AvalonX. All rights reserved.</span><span>Enterprise AI Solution Company</span></div>
-  </div>
-</footer>
+  </section>
 
-<script src="js/main.js"></script>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo footer-logo"><img src="assets/logo-white-sm.png" alt="AvalonX"
+              class="nav-logo-img" /></a>
+          <p>기업의 문서와 데이터를 연결해<br>실행 가능한 AI 업무 환경을 구축합니다.</p>
+        </div>
+        <div class="footer-col">
+          <h5>서비스</h5>
+          <ul>
+            <li><a href="technology.html">기술</a></li>
+            <li><a href="use-cases.html">활용 사례</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>회사</h5>
+          <ul>
+            <li><a href="about.html">회사 소개</a></li>
+            <li><a href="contact.html">문의</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>연락</h5>
+          <ul>
+            <li><a href="contact.html">문의하기</a></li>
+            <li><a href="mailto:contact@avalonx.ai">contact@avalonx.ai</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 AvalonX. All rights reserved.</span><span>Enterprise AI Solution
+          Company</span></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/page-agent@1.6.2/dist/iife/page-agent.demo.js" crossorigin="true"></script>
 </body>
+
 </html>
