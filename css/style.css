@@ -2,58 +2,59 @@
    AvalonX Design System
    =========================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  /* Warm dark backgrounds */
-  --bg-primary: #0C0F14;
-  --bg-secondary: #161A22;
-  --bg-elevated: #1C2029;
-  --bg-sunken: #08090D;
-  --bg-card: rgba(240, 235, 227, 0.04);
-  --bg-card-hover: rgba(240, 235, 227, 0.07);
+  /* Premium dark backgrounds */
+  --bg-primary: #050505;
+  --bg-secondary: #0A0A0B;
+  --bg-elevated: #121216;
+  --bg-sunken: #000000;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(255, 255, 255, 0.05);
 
-  /* Warm borders */
-  --border: rgba(200, 188, 172, 0.12);
-  --border-hover: rgba(200, 188, 172, 0.24);
+  /* Subtle borders */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.15);
 
-  /* Brand blue */
-  --blue: #1E6BFF;
-  --blue-dark: #0A3DFF;
-  --blue-light: #4FA3FF;
-  --gradient-primary: linear-gradient(135deg, #0A3DFF 0%, #1E6BFF 50%, #4FA3FF 100%);
+  /* Brand colors */
+  --blue: #3b82f6;
+  --blue-dark: #2563eb;
+  --blue-light: #60a5fa;
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
 
-  /* Accent: brand blue */
-  --accent: #1E6BFF;
-  --accent-hover: #0A3DFF;
-  --accent-subtle: rgba(30, 107, 255, 0.12);
+  /* Accent: vibrant purple */
+  --accent: #8b5cf6;
+  --accent-hover: #7c3aed;
+  --accent-subtle: rgba(139, 92, 246, 0.15);
 
   /* Semantic */
-  --success: #3D7A5F;
-  --warning: #B87333;
-  --error: #A33A12;
-  --info: #4A7FB5;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
 
-  /* Warm text */
-  --text-primary: #F0EBE3;
-  --text-secondary: rgba(240, 235, 227, 0.72);
-  --text-muted: rgba(240, 235, 227, 0.48);
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.4);
 
   /* Typography */
-  --font-sans: 'Noto Sans KR', -apple-system, sans-serif;
-  --font-display: 'Noto Sans KR', -apple-system, sans-serif;
+  --font-sans: 'Inter', 'Noto Sans KR', -apple-system, sans-serif;
+  --font-display: 'Inter', 'Noto Sans KR', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Spacing & radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
 
-  --shadow-card: 0 12px 36px rgba(1, 4, 9, 0.5);
+  --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 25px rgba(139, 92, 246, 0.25);
 
-  --nav-height: 68px;
-  --transition: all 0.15s cubic-bezier(0.0, 0.0, 0.2, 1);
+  --nav-height: 72px;
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ===========================
@@ -176,10 +177,11 @@ section {
 }
 
 .nav.scrolled {
-  background: rgba(12, 15, 20, 0.92);
+  background: rgba(5, 5, 5, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom-color: var(--border);
+  border-bottom-color: rgba(255,255,255,0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .nav-inner {
@@ -308,28 +310,31 @@ section {
    =========================== */
 .card {
   background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   padding: 32px;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 .card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(30, 107, 255, 0.03) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, transparent 60%);
   opacity: 0;
   transition: var(--transition);
 }
 
 .card:hover {
   background: var(--bg-card-hover);
-  border-color: var(--border-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-card);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
 }
 
 .card:hover::before { opacity: 1; }
@@ -377,7 +382,41 @@ section {
 }
 
 .hero-bg {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-bg::before,
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  animation: float 12s ease-in-out infinite alternate;
+}
+
+.hero-bg::before {
+  top: -20%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: var(--blue);
+}
+
+.hero-bg::after {
+  bottom: -20%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: var(--accent);
+  animation-delay: -6s;
 }
 
 #particles-canvas {
@@ -454,14 +493,17 @@ section {
 
 /* Terminal mockup in hero */
 .hero-terminal {
-  background: var(--bg-sunken);
-  border: 1px solid var(--border);
+  background: rgba(10, 10, 11, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
   overflow: hidden;
   font-family: var(--font-mono);
   font-size: 13px;
   line-height: 1.7;
-  animation: fadeInUp 0.6s ease 0.2s both;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+  animation: fadeInUp 0.6s ease 0.2s both, float 6s ease-in-out infinite;
 }
 
 .terminal-bar {
@@ -528,8 +570,10 @@ section {
 }
 
 .problem-item:hover {
-  border-color: var(--border-hover);
+  border-color: rgba(255, 255, 255, 0.15);
   background: var(--bg-card-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .problem-icon {
@@ -659,9 +703,9 @@ section {
 .cap-card.teal::after { background: var(--success); }
 
 .cap-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: var(--shadow-card);
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
 }
 
 .cap-card:hover::after { opacity: 1; }
