@@ -44,38 +44,6 @@ if ('IntersectionObserver' in window && revealElements.length > 0) {
   revealElements.forEach((element) => element.classList.add('visible'));
 }
 
-const submitButtonLabel = document.querySelector('#contact-submit-btn span');
-if (submitButtonLabel) {
-  submitButtonLabel.textContent = '문의 보내기';
-}
-
-const form = document.getElementById('contact-form');
-if (form) {
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    const data = new FormData(form);
-    const recipient = form.dataset.recipient || 'homepage@avalonx.kr';
-    const subject = `[AvalonX 홈페이지 문의] ${data.get('company')} - ${data.get('name')}`;
-    const body = [
-      `이름: ${data.get('name')}`,
-      `회사명: ${data.get('company')}`,
-      `이메일: ${data.get('email')}`,
-      `직함 / 담당 업무: ${data.get('role') || '-'}`,
-      '',
-      '문의 내용',
-      data.get('message')
-    ].join('\n');
-
-    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  });
-}
-
 document.querySelectorAll('.cap-card, .card').forEach((card) => {
   card.addEventListener('mousemove', (event) => {
     const rect = card.getBoundingClientRect();
