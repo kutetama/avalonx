@@ -59,18 +59,20 @@ if (form) {
       return;
     }
 
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalHTML = submitButton.innerHTML;
-    submitButton.innerHTML = '<span>접수되었습니다</span>';
-    submitButton.style.background = '#3D7A5F';
-    submitButton.disabled = true;
+    const data = new FormData(form);
+    const recipient = form.dataset.recipient || 'homepage@avalonx.kr';
+    const subject = `[AvalonX 홈페이지 문의] ${data.get('company')} - ${data.get('name')}`;
+    const body = [
+      `이름: ${data.get('name')}`,
+      `회사명: ${data.get('company')}`,
+      `이메일: ${data.get('email')}`,
+      `직함 / 담당 업무: ${data.get('role') || '-'}`,
+      '',
+      '문의 내용',
+      data.get('message')
+    ].join('\n');
 
-    window.setTimeout(() => {
-      submitButton.innerHTML = originalHTML;
-      submitButton.style.background = '';
-      submitButton.disabled = false;
-      form.reset();
-    }, 2400);
+    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
 
