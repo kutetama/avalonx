@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PF8YSG744"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0PF8YSG744');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | AvalonX</title>
   <meta name="description" content="AvalonX 상담 문의 페이지입니다. 현재 업무와 데이터 환경에 맞는 AI 도입 방향을 함께 검토해드립니다." />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: var(--nav-height); left: 0; right: 0; background: rgba(12, 15, 20, 0.98); backdrop-filter: blur(20px); padding: 16px 24px; border-bottom: 1px solid var(--border); gap: 4px; }
     .inquiry-type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
     .inquiry-type-btn { padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg-card); color: var(--text-secondary); font-family: var(--font-sans); font-size: 14px; font-weight: 500; cursor: pointer; transition: var(--transition); text-align: center; }
     .inquiry-type-btn:hover, .inquiry-type-btn.selected { border-color: rgba(30, 107, 255, 0.5); background: rgba(30, 107, 255, 0.08); color: var(--blue-light); }
@@ -44,7 +52,7 @@
     <div class="page-hero-content">
       <span class="section-label" style="margin:0 auto 20px;">Contact</span>
       <h1>AvalonX와 함께<br><span class="gradient-text">첫 적용 시나리오를 설계해보세요</span></h1>
-      <p>기술 상담과 도입 문의를 현재 상황에 맞춰 빠르게 답변드리겠습니다.</p>
+      <p>이메일 앱을 통해 문의 내용을 보내주시면 확인 후 답변드리겠습니다.</p>
     </div>
   </div>
 </div>
@@ -60,7 +68,7 @@
         <div class="contact-form card-light">
           <h3 style="font-size:22px; font-weight:800; letter-spacing:-0.01em; margin-bottom:8px;">문의 유형 선택</h3>
           <p style="font-size:14px; color:var(--text-muted); margin-bottom:24px;">원하시는 상담 목적에 맞춰 내용을 남겨주세요.</p>
-          <form id="contact-form" novalidate>
+          <form id="contact-form" novalidate data-recipient="homepage@avalonx.kr">
             <div class="form-row">
               <div class="form-group"><label for="contact-name">이름 <span class="required-mark">*</span></label><input type="text" id="contact-name" name="name" placeholder="홍길동" required /></div>
               <div class="form-group"><label for="contact-company">회사명 <span class="required-mark">*</span></label><input type="text" id="contact-company" name="company" placeholder="AvalonX" required /></div>
@@ -68,10 +76,11 @@
             <div class="form-group"><label for="contact-email">이메일 <span class="required-mark">*</span></label><input type="email" id="contact-email" name="email" placeholder="contact@company.com" required /></div>
             <div class="form-group"><label for="contact-role">직함 / 담당 업무</label><input type="text" id="contact-role" name="role" placeholder="예: CTO, 운영기획팀, 데이터 분석 담당" /></div>
             <div class="form-group"><label for="contact-message">문의 내용 <span class="required-mark">*</span></label><textarea id="contact-message" name="message" placeholder="현재 해결하고 싶은 문제, 검토 중인 AI 활용 시나리오, 보안/배포 요구사항 등을 적어주세요." required></textarea></div>
+            <div class="form-group consent-group"><label class="consent-label"><input type="checkbox" id="contact-consent" required /><span>문의 답변을 위한 개인정보 수집·이용에 동의합니다. 입력한 이름, 회사명, 이메일과 문의 내용은 이메일 작성 화면으로 전달됩니다.</span></label></div>
             <div class="form-submit-row">
               <button type="submit" class="btn btn-primary" style="flex:1; justify-content:center;" id="contact-submit-btn"><span>문의 보내기</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
             </div>
-            <p class="form-note">현재 이 폼은 초안 단계의 데모 폼으로 동작하며 실제 메일 전송이나 DB 저장은 연결되어 있지 않습니다.<br>실제 운영 단계에서는 메일 전송 또는 CRM 연동을 연결하면 됩니다.</p>
+            <p class="form-note">버튼을 누르면 기본 이메일 앱에 문의 내용이 작성됩니다. 실제 발송은 이메일 앱에서 한 번 더 확인해 주세요.<br>직접 문의: <a href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a></p>
           </form>
         </div>
       </div>
