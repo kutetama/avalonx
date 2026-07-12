@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PF8YSG744"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0PF8YSG744');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Technology | AvalonX</title>
   <meta name="description" content="AvalonX의 엔터프라이즈 AI 기술 구조인 RAG, Text-to-SQL, Agent, 데이터 통합 아키텍처를 소개합니다." />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: var(--nav-height); left: 0; right: 0; background: rgba(12, 15, 20, 0.98); backdrop-filter: blur(20px); padding: 16px 24px; border-bottom: 1px solid var(--border); gap: 4px; }
     .tech-section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0; }
     .data-sources { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
     .data-source-card { background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 24px; text-align: center; transition: var(--transition); box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
