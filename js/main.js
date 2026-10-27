@@ -15,7 +15,7 @@
   menu.addEventListener('click', event => { if (event.target.closest('a')) setMenu(false); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && menu.classList.contains('is-open')) setMenu(false, true); });
   document.addEventListener('click', event => { if (!event.target.closest('.site-header')) setMenu(false); });
-  const desktop = matchMedia('(min-width: 761px)');
+  const desktop = matchMedia('(min-width: 1024px)');
   desktop.addEventListener('change', () => setMenu(false));
 })();
 
