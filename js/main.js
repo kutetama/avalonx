@@ -1,58 +1,49 @@
-/* ===========================
-   AvalonX Main JavaScript
-   =========================== */
+// Navigation and progressive enhancements. All content remains usable without JavaScript.
+(() => {
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.site-nav');
+  if (!toggle || !menu) return;
+  toggle.hidden = false;
+  document.documentElement.classList.add('js');
+  const setMenu = (open, restoreFocus = false) => {
+    menu.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    if (restoreFocus) toggle.focus();
+  };
+  toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+  menu.addEventListener('click', event => { if (event.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && menu.classList.contains('is-open')) setMenu(false, true); });
+  document.addEventListener('click', event => { if (!event.target.closest('.site-header')) setMenu(false); });
+  const desktop = matchMedia('(min-width: 761px)');
+  desktop.addEventListener('change', () => setMenu(false));
+})();
 
-const nav = document.querySelector('.nav');
-const toggle = document.querySelector('.nav-mobile-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-window.addEventListener('scroll', () => {
-  nav?.classList.toggle('scrolled', window.scrollY > 20);
-});
-
-toggle?.addEventListener('click', () => {
-  const isOpen = navLinks?.classList.toggle('open');
-  toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-});
-
-const currentPage = location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a').forEach((link) => {
-  const href = link.getAttribute('href');
-  if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-    link.classList.add('active');
-  }
-
-  link.addEventListener('click', () => {
-    navLinks?.classList.remove('open');
-    toggle?.setAttribute('aria-expanded', 'false');
-  });
-});
-
-const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-if ('IntersectionObserver' in window && revealElements.length > 0) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+(() => {
+  const copyButton = document.querySelector('#copy-email');
+  const status = document.querySelector('.copy-status');
+  if (copyButton && status) {
+    copyButton.hidden = false;
+    copyButton.addEventListener('click', async () => {
+      try {
+        if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText('homepage@avalonx.kr');
+        status.textContent = '이메일 주소를 복사했습니다.';
+      } catch {
+        const address = document.querySelector('.email-address');
+        const selection = window.getSelection();
+        if (address && selection) {
+          const range = document.createRange();
+          range.selectNodeContents(address);
+          selection.removeAllRanges();
+          selection.addRange(range);
+        }
+        status.textContent = '주소를 선택했습니다. 복사 단축키 또는 길게 누르기로 복사해주세요.';
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-  revealElements.forEach((element) => observer.observe(element));
-} else {
-  revealElements.forEach((element) => element.classList.add('visible'));
-}
-
-document.querySelectorAll('.cap-card, .card').forEach((card) => {
-  card.addEventListener('mousemove', (event) => {
-    const rect = card.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
-    const y = ((event.clientY - rect.top) / rect.height - 0.5) * 8;
-    card.style.transform = `perspective(600px) rotateY(${x}deg) rotateX(${-y}deg) translateY(-6px)`;
-  });
-
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-  });
-});
+    const products = {'data-studio':'Data Studio',trainer:'Trainer',autojudge:'AutoJudge'};
+    const product = products[new URLSearchParams(location.search).get('product')];
+    const compose = document.querySelector('#compose-email');
+    if (product && compose) compose.href = 'mailto:homepage@avalonx.kr?subject=' + encodeURIComponent('[AvalonX] ' + product + ' 도입 문의');
+  }
+})();

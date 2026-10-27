@@ -1,121 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PF8YSG744"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-0PF8YSG744');
-  </script>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Technology | AvalonX</title>
-  <meta name="description" content="AvalonX의 엔터프라이즈 AI 기술 구조인 RAG, Text-to-SQL, Agent, 데이터 통합 아키텍처를 소개합니다." />
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .tech-section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0; }
-    .data-sources { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
-    .data-source-card { background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 24px; text-align: center; transition: var(--transition); box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
-    .data-source-card:hover { border-color: rgba(90, 88, 242, 0.2); transform: translateY(-4px); box-shadow: 0 10px 24px rgba(90, 88, 242, 0.08); }
-    .data-source-icon { font-size: 20px; display: block; margin-bottom: 12px; font-weight: 700; color: #0B0D17; }
-    .data-source-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 8px; color: #0B0D17; }
-    .data-source-card p { font-size: 13px; color: #4A4A5A; line-height: 1.6; }
-    @media (max-width: 768px) { .data-sources { grid-template-columns: 1fr 1fr; } }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0c0d10"><title>기술·구축 | AvalonX</title>
+<meta name="description" content="기업의 데이터, 모델, 보안 및 인프라 조건에 맞춰 Data Studio, Trainer, AutoJudge 도입 범위를 설계합니다.">
+<link rel="canonical" href="https://www.avalonx.kr/technology.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="기술·구축 | AvalonX">
+<meta property="og:description" content="기업의 데이터, 모델, 보안 및 인프라 조건에 맞춰 Data Studio, Trainer, AutoJudge 도입 범위를 설계합니다.">
+<meta property="og:locale" content="ko_KR">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/avalonx-kr.woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/main.js" defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0PF8YSG744"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0PF8YSG744');</script>
 </head>
-<body>
-<nav class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="AvalonX 홈"><img src="assets/logo-white-sm.png" alt="AvalonX" class="nav-logo-img" /></a>
-    <div class="nav-links">
-      <a href="index.html">홈</a>
-      <a href="technology.html" class="active">기술</a>
-      <a href="use-cases.html">활용 사례</a>
-      <a href="about.html">회사 소개</a>
-      <a href="contact.html">문의</a>
-    </div>
-    <div class="nav-cta">
-      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</nav>
-
-<div class="page-hero">
-  <div class="page-hero-bg"></div>
-  <div class="page-hero-grid"></div>
-  <div class="container">
-    <div class="page-hero-content">
-      <span class="section-label" style="margin:0 auto 20px;">Technology</span>
-      <h1>기업 환경에 맞춘<br><span class="gradient-text">실행형 AI 아키텍처</span></h1>
-      <p>문서 검색, 데이터 질의, 에이전트 자동화가 분리되지 않도록 하나의 구조 안에서 설계합니다.</p>
-    </div>
-  </div>
+<body><a class="skip-link" href="#main">본문 바로가기</a>
+<header class="site-header">
+<div class="container header-inner"><a class="brand" href="index.html" aria-label="AvalonX 홈"><span class="wordmark">Avalon<span>X</span></span></a><button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu" hidden><span></span><span></span></button>
+<nav id="site-menu" class="site-nav" aria-label="주 메뉴"><a href="index.html#products">제품</a><a href="technology.html" aria-current="page">기술·구축</a><a href="about.html">회사 소개</a><a href="contact.html" class="nav-contact">도입 문의</a></nav>
 </div>
-
-<section class="architecture">
-  <div class="container">
-    <div style="text-align:center; max-width:760px; margin:0 auto;" class="reveal"><span class="section-label">Architecture</span><h2 class="section-title">AvalonX AI Stack</h2><p class="section-subtitle" style="margin:0 auto;">Core, Agent, Insight, Automation 구조를 기반으로 데이터 연결부터 실행 자동화까지 끊김 없는 업무 흐름을 설계합니다.</p></div>
-    <div class="arch-diagram">
-      <div class="arch-layer interface reveal stagger-1"><div class="arch-layer-label">Core / Insight</div><div class="arch-layer-content"><span class="arch-chip">Search Portal</span><span class="arch-chip">Dashboard</span><span class="arch-chip">Insight Workspace</span></div></div>
-      <div class="arch-layer intelligence reveal stagger-2"><div class="arch-layer-label">Agent / Automation</div><div class="arch-layer-content"><span class="arch-chip">RAG</span><span class="arch-chip">Text-to-SQL</span><span class="arch-chip">Agent Orchestration</span></div></div>
-      <div class="arch-layer knowledge reveal stagger-3"><div class="arch-layer-label">Connected Data</div><div class="arch-layer-content"><span class="arch-chip">Documents</span><span class="arch-chip">Databases</span><span class="arch-chip">Internal APIs</span><span class="arch-chip">Systems</span></div></div>
-    </div>
-  </div>
+</header>
+<main id="main">
+<section class="page-intro">
+<div class="container">
+<h1>기업의 데이터와 인프라에 <br> 맞는 AI를 설계합니다.</h1>
+<p>데이터 준비, 모델 학습, 품질 평가의 각 단계에서 <br> 필요한 기술과 운영 조건을 함께 검토합니다.</p>
+</div>
 </section>
-
-<div class="tech-section-divider"></div>
-
-<section class="section-light">
-  <div class="container">
-    <div style="text-align:center; max-width:760px; margin:0 auto;" class="reveal"><span class="section-label">Core Engines</span><h2 class="section-title">핵심 기술 요소</h2><p class="section-subtitle" style="margin:0 auto;">각 기술은 독립 기능이 아니라 검색, 분석, 실행을 연결하는 조합으로 동작합니다.</p></div>
-    <div class="capabilities-grid">
-      <div class="card-light reveal stagger-1"><div class="card-icon icon-blue tech-font">RAG</div><h3>RAG 기반 지식 검색</h3><p>문서와 규정, 매뉴얼을 검색 가능한 지식으로 변환하고 답변과 함께 관련 출처를 제공합니다.</p></div>
-      <div class="card-light reveal stagger-2"><div class="card-icon icon-purple tech-font">SQL</div><h3>Text-to-SQL 분석 엔진</h3><p>자연어 질문을 데이터 질의로 바꿔 현업 사용자가 데이터에 더 빠르게 접근할 수 있도록 돕습니다.</p></div>
-      <div class="card-light reveal stagger-3"><div class="card-icon icon-teal tech-font">AGT</div><h3>Agent 실행 계층</h3><p>여러 단계의 업무를 규칙과 도구 연동에 맞춰 자동 실행하고 후속 액션까지 이어지게 합니다.</p></div>
-    </div>
-  </div>
+<section class="content-section">
+<div class="container">
+<div class="section-heading">
+<h2>독립적으로 시작하고, <br> 필요에 따라 연결합니다.</h2>
+<p>각 제품은 담당하는 단계에 집중합니다. <br> 도입 목적에 따라 한 제품부터 시작할 수 있습니다.</p>
+</div>
+<ol class="integration-list">
+<li><strong>Data Studio</strong><span>자료 정제 · 학습 데이터 검수</span>
+<p>승인한 데이터를 학습 패키지로 내려받습니다.</p>
+</li>
+<li><strong>Trainer</strong><span>모델 학습 · 검증 · 최적화</span>
+<p>학습 패키지를 직접 가져오고, 모델과 실행 조건을 설정합니다.</p>
+</li>
+<li><strong>AutoJudge</strong><span>LLM · RAG 품질 평가</span>
+<p>평가 서비스를 별도로 구성하고, 비교할 대상과 기준을 연결합니다.</p>
+</li>
+</ol>
+</div>
 </section>
-
-<section class="section-light" style="background:#FFFFFF;">
-  <div class="container">
-    <div style="text-align:center; max-width:760px; margin:0 auto;" class="reveal"><span class="section-label">Data Sources</span><h2 class="section-title">연결 가능한 데이터 자산</h2><p class="section-subtitle" style="margin:0 auto;">기업이 이미 사용 중인 시스템을 최대한 활용하는 것이 도입 속도를 좌우합니다.</p></div>
-    <div class="data-sources">
-      <div class="data-source-card reveal stagger-1"><span class="data-source-icon tech-font">DOC</span><h4 class="tech-font">문서 저장소</h4><p>사내 문서, 규정집, 회의록, 프로젝트 산출물을 지식 검색 자산으로 전환합니다.</p></div>
-      <div class="data-source-card reveal stagger-2"><span class="data-source-icon tech-font">DB</span><h4 class="tech-font">업무 데이터베이스</h4><p>운영 데이터, KPI 테이블, 통계 정보를 자연어 기반 분석 흐름에 연결합니다.</p></div>
-      <div class="data-source-card reveal stagger-3"><span class="data-source-icon tech-font">API</span><h4 class="tech-font">내부/외부 API</h4><p>CRM, ERP, 메신저, 협업 도구와 연계해 실행형 자동화 시나리오를 구성합니다.</p></div>
-    </div>
-  </div>
+<section class="content-section light-section">
+<div class="container">
+<h2>도입 전에 함께 확인합니다.</h2>
+<div class="spec-list">
+<article>
+<h3>데이터와 모델 연결</h3>
+<p>사용 가능한 자료와 접근 권한, 사내 모델 API 또는 외부 모델 API의 사용 범위를 확인합니다. 외부 API를 사용하는 경우 전송되는 데이터의 범위도 함께 검토합니다.</p>
+</article>
+<article>
+<h3>학습과 추론 자원</h3>
+<p>웹 애플리케이션과 모델 실행 자원을 구분해 설계합니다. 학습·추론에 필요한 GPU와 메모리는 모델 크기, 학습 방식, 동시 작업 수에 따라 정합니다.</p>
+</article>
+<article>
+<h3>사내 인프라와 폐쇄망</h3>
+<p>온프레미스 구축을 검토할 수 있습니다. 폐쇄망에서는 모델 파일, 실행 이미지, 패키지 반입과 업데이트 절차를 사전에 준비합니다.</p>
+</article>
+<article>
+<h3>운영과 접근 정책</h3>
+<p>사용자 역할, 데이터 보관, 백업 및 복구 범위를 정합니다. SSO, 고가용성, 조직별 격리와 같은 요구사항은 별도 설계 범위로 확인합니다.</p>
+</article>
+</div>
+</div>
 </section>
-
-<section class="cta-section">
-  <div class="container">
-    <div class="cta-inner reveal">
-      <span class="section-label" style="margin:0 auto 24px;">Technology Fit</span>
-      <h2>현재 시스템 환경에 맞는 구조인지 함께 검토해보세요</h2>
-      <p>보안 요구사항, 배포 방식, 데이터 소스를 기준으로 가장 현실적인 기술 구성을 제안드립니다.</p>
-      <div class="cta-actions">
-        <a href="mailto:homepage@avalonx.kr?subject=%5BAvalonX%20홈페이지%20문의%5D" class="btn btn-primary btn-lg">기술 상담 문의</a>
-        <a href="use-cases.html" class="btn btn-secondary btn-lg">활용 사례 보기</a>
-      </div>
-    </div>
-  </div>
+<section class="content-section">
+<div class="container section-heading">
+<h2>기존 업무 시스템과의 <br> 연결까지 고려합니다.</h2>
+<div>
+<p>문서 기반 지식 검색, 데이터베이스 질의, API를 활용하는 업무 자동화 등 기존 환경에서 필요한 적용 방향을 함께 검토합니다.</p>
+<p class="secondary-paragraph">학습과 평가 제품의 도입 범위, 업무 시스템 연동 범위, 운영 모델 서비스의 구축 범위는 목적에 맞춰 구분합니다.</p>
+<a class="text-link" href="use-cases.html">적용 시나리오 보기 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div>
+</div>
 </section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand"><a href="index.html" class="nav-logo footer-logo"><img src="assets/logo-white-sm.png" alt="AvalonX" class="nav-logo-img" /></a><p>기업의 문서와 데이터를 연결해<br>실행 가능한 AI 업무 환경을 구축합니다.</p></div>
-      <div class="footer-col"><h5>서비스</h5><ul><li><a href="technology.html">기술</a></li><li><a href="use-cases.html">활용 사례</a></li></ul></div>
-      <div class="footer-col"><h5>회사</h5><ul><li><a href="about.html">회사 소개</a></li><li><a href="contact.html">문의</a></li></ul></div>
-      <div class="footer-col"><h5>연락</h5><ul><li><a href="mailto:homepage@avalonx.kr?subject=%5BAvalonX%20홈페이지%20문의%5D">문의하기</a></li><li><a href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><span>© 2026 AvalonX. All rights reserved.</span><span>Enterprise AI Solution Company</span></div>
-  </div>
+<section class="contact-band">
+<div class="container contact-band-inner">
+<div>
+<h2>기업 AI의 다음 단계, <br> 함께 설계합니다.</h2>
+<p>보유한 자료와 모델, 해결하려는 업무를 알려주세요. <br> 필요한 제품과 도입 범위를 함께 검토하겠습니다.</p>
+</div>
+<a class="button primary" href="contact.html">도입 상담 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-top">
+<div><a href="index.html" class="brand" aria-label="AvalonX 홈"><span class="wordmark">Avalon<span>X</span></span></a>
+<p>기업의 데이터와 경험을 <br> 검증 가능한 AI로 이어갑니다.</p>
+</div>
+<div class="footer-links"><a href="index.html#products">제품</a><a href="technology.html">기술·구축</a><a href="use-cases.html">적용 시나리오</a><a href="about.html">회사 소개</a></div>
+<a class="footer-email" href="mailto:homepage@avalonx.kr">homepage@avalonx.kr <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div>
+<div class="footer-bottom"><span>© 2026 AvalonX. All rights reserved.</span><span>Where Business Thrives with AI</span></div>
+</div>
 </footer>
-
-<script src="js/main.js"></script>
 </body>
 </html>
