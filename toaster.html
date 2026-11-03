@@ -17,13 +17,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- @assets -->
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/assets/fonts/ax-sans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/ax-heading-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ax-sans.woff2?v=20261103c" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ax-heading-800.woff2?v=20261103c" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Unbounded:wght@800&display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261103b">
-<script src="/js/main.js?v=20261103b" defer></script>
+<link rel="stylesheet" href="/css/site.css?v=20261103c">
+<script src="/js/main.js?v=20261103c" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PF8YSG744"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0PF8YSG744');</script>
 <!-- /@assets -->
@@ -74,7 +74,7 @@
           <p class="line-label">AGENT LINE</p>
           <h3 id="line-agent">그 모델로 에이전트를 만듭니다</h3>
           <div class="flow" aria-label="Index에서 Agent로 이어지는 흐름"><a class="chip" href="#index" style="--c:var(--product-index)">Index</a><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span><a class="chip" href="#agent">Agent</a></div>
-          <p>사내 자료를 검색 자산으로 만들고, 사내 시스템을 연결해 업무별 에이전트를 만듭니다.</p>
+          <p>사내 자료를 검색 자산으로 만들고, 현업이 UI에서 에이전트를 만들어 권한 안에서 실행합니다.</p>
         </article>
       </div>
     </div>
@@ -146,13 +146,14 @@
         <article class="product" id="agent" aria-labelledby="agent-name">
           <div class="product-head">
             <div class="product-name"><h3 id="agent-name">Agent</h3><span class="product-line">AGENT LINE</span></div>
-            <p class="lead">사내 자료와 시스템을 연결해 업무별 에이전트를 만듭니다.</p>
-            <p>Index로 만든 검색 자산과 사내 API·DB를 도구로 연결해, 업무 하나를 맡는 에이전트를 구성합니다.</p>
+            <p class="lead">현업이 UI에서 에이전트를 만들고, 조직 권한 안에서 실행합니다.</p>
+            <p>Index로 만든 검색 자산과 사내 API·DB를 도구로 연결해 업무별 에이전트를 만듭니다. 실행은 조직도 기반 권한 안에서만 이뤄집니다.</p>
             <p><a class="text-link" href="/contact?product=agent">Agent 도입 상담 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></p>
           </div>
           <ul class="checks">
             <li>입력 보안 체크 → 의도 분류 → 실행 → 출력의 흐름</li>
             <li>API·DB·MCP를 도구로 등록해 호출</li>
+            <li>조직도 기반 권한: 열람할 수 없는 자료는 검색에서 제외</li>
           </ul>
         </article>
       </div>

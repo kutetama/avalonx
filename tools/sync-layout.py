@@ -18,11 +18,11 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CSS_VERSION = "20261103b"  # CSS·JS를 바꾸면 올린다 (캐시 갱신)
+CSS_VERSION = "20261103c"  # CSS·JS·서체를 바꾸면 올린다 (캐시 갱신, site.css의 서체 URL에도 반영됨)
 
 ASSETS = f"""<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/assets/fonts/ax-sans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/ax-heading-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ax-sans.woff2?v={CSS_VERSION}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ax-heading-800.woff2?v={CSS_VERSION}" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Unbounded:wght@800&display=swap">
@@ -93,9 +93,24 @@ def render(path: Path) -> str:
     return html
 
 
+def sync_css_fonts(check: bool) -> int:
+    """site.css의 서체 URL 버전(?v=)을 CSS_VERSION에 맞춘다. preload URL과 같아야 두 번 받지 않는다."""
+    css = ROOT / "css" / "site.css"
+    old = css.read_text(encoding="utf-8")
+    new = re.sub(r"(/assets/fonts/ax-[a-z0-9-]+\.woff2)(\?v=\w+)?", rf"\1?v={CSS_VERSION}", old)
+    if new == old:
+        return 0
+    if check:
+        print("[다름] css/site.css 서체 버전")
+        return 1
+    css.write_text(new, encoding="utf-8")
+    print("갱신: css/site.css 서체 버전")
+    return 0
+
+
 def main() -> int:
     check = "--check" in sys.argv
-    bad = 0
+    bad = sync_css_fonts(check)
     for path in sorted(ROOT.glob("*.html")):
         new = render(path)
         if new != path.read_text(encoding="utf-8"):

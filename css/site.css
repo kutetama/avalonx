@@ -5,10 +5,10 @@
 /* 서체: 사이트에 쓰인 글자만 남긴 자체 호스팅 서브셋 (tools/subset-fonts.py로 생성).
  * 원본 Pretendard / 원티드 산스 / 갈무리11, 모두 SIL OFL 1.1 — assets/fonts/LICENSE.md
  * 문구를 바꾸면 스크립트를 다시 돌려야 새 글자가 이 서체로 보인다. */
-@font-face { font-family: "AX Sans"; src: url("/assets/fonts/ax-sans.woff2") format("woff2"); font-weight: 45 920; font-display: swap; }
-@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
-@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-800.woff2") format("woff2"); font-weight: 800; font-display: swap; }
-@font-face { font-family: "AX Pixel"; src: url("/assets/fonts/ax-pixel.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "AX Sans"; src: url("/assets/fonts/ax-sans.woff2?v=20261103c") format("woff2"); font-weight: 45 920; font-display: swap; }
+@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-700.woff2?v=20261103c") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-800.woff2?v=20261103c") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "AX Pixel"; src: url("/assets/fonts/ax-pixel.woff2?v=20261103c") format("woff2"); font-weight: 400; font-display: swap; }
 
 :root {
   color-scheme: dark;

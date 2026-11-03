@@ -26,7 +26,7 @@ pip install fonttools brotli
 python3 tools/subset-fonts.py --src <원본 서체 폴더>
 ```
 
-CSS·JS를 바꾸면 `tools/sync-layout.py`의 `CSS_VERSION`을 올리고 다시 실행한다(캐시 갱신).
+CSS·JS·서체를 바꾸면 `tools/sync-layout.py`의 `CSS_VERSION`을 올리고 다시 실행한다. HTML의 자산 링크와 `site.css`의 서체 URL이 같은 버전으로 바뀐다(캐시 갱신).
 
 ## 그 밖의 파일
 
