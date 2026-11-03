@@ -155,13 +155,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
 .text-link svg { width: 18px; height: 18px; }
-
-.badge {
-  display: inline-block; vertical-align: middle;
-  font-family: var(--font-pixel); font-size: 11px; line-height: 1; /* 갈무리는 11px 배수에서만 선명 */
-  color: var(--navy); background: var(--sky); padding: 5px 6px 4px; border-radius: 2px;
-}
-
 /* ── 픽셀 시그니처 패턴 (6×5 고정 배치, 장식 전용) ─────── */
 .pixel-x {
   --cell: clamp(28px, 4.2vw, 52px);           /* 브랜드 최소 18px 이상 */
