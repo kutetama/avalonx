@@ -1,0 +1,11 @@
+# 미리보기 배포(*.avalonx.pages.dev)는 검색에 노출하지 않는다
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+# 서브셋 서체·브랜드 이미지는 파일명이 바뀔 때만 갱신되므로 길게 캐시
+/assets/fonts/*
+  Cache-Control: public, max-age=86400
+/assets/brand/*
+  Cache-Control: public, max-age=86400

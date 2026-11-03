@@ -1,11 +1,17 @@
-Copyright (c) 2021, Kil Hyung-jin (https://github.com/orioncactus/pretendard),
-with Reserved Font Name Pretendard.
+# 웹 서체 라이선스
 
-This Font Software is licensed under the SIL Open Font License, Version 1.1.
-This license is copied below, and is also available with a FAQ at:
-https://scripts.sil.org/OFL
+이 폴더의 서체는 아래 원본 서체에서 사이트에 쓰인 글자만 남긴 서브셋입니다(`tools/subset-fonts.py`로 생성).
+원본에 예약 서체명(Reserved Font Name)이 있는 경우가 있어, 수정본인 서브셋의 내부 이름은 AX Sans·AX Heading·AX Pixel로 바꿨습니다.
 
+| 파일 | 원본 | 저작권 |
+| --- | --- | --- |
+| ax-sans.woff2 | Pretendard Variable | Copyright © 2021–2023 Kil Hyung-jin (https://github.com/orioncactus/pretendard), with Reserved Font Name Pretendard |
+| ax-heading-700.woff2, ax-heading-800.woff2 | Wanted Sans Bold, ExtraBold | Copyright © 2024 Wanted Lab, Inc. (https://github.com/wanteddev/wanted-sans) |
+| ax-pixel.woff2 | Galmuri11 | Copyright © 2019–2025 Lee Minseo (quiple@quiple.dev) (https://github.com/quiple/galmuri) |
 
+세 서체 모두 SIL Open Font License 1.1로 배포되며, 전문은 아래와 같습니다.
+
+```
 -----------------------------------------------------------
 SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
 -----------------------------------------------------------
@@ -92,3 +98,5 @@ INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
 DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
+```
+

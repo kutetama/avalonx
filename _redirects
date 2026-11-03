@@ -1,0 +1,5 @@
+# 옛 주소 → 새 주소 (2026-11 개편)
+/technology        /security          301
+/technology.html   /security          301
+/use-cases         /toaster#examples  301
+/use-cases.html    /toaster#examples  301
