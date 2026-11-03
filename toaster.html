@@ -17,13 +17,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- @assets -->
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/assets/fonts/ax-sans.woff2?v=20261103c" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/ax-heading-800.woff2?v=20261103c" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ax-sans.woff2?v=20261103d" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ax-heading-800.woff2?v=20261103d" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Unbounded:wght@800&display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261103c">
-<script src="/js/main.js?v=20261103c" defer></script>
+<link rel="stylesheet" href="/css/site.css?v=20261103d">
+<script src="/js/main.js?v=20261103d" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PF8YSG744"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0PF8YSG744');</script>
 <!-- /@assets -->
@@ -110,7 +110,7 @@
           </div>
           <ul class="checks">
             <li>SFT·DPO·LoRA·QLoRA 학습, 실시간 손실 차트</li>
-            <li>어댑터 병합, FP8~GGUF 양자화</li>
+            <li>어댑터 병합, FP8·GGUF 양자화</li>
             <li>vLLM·Ollama 서빙, 채팅으로 바로 확인</li>
             <li>GPU 노드·실행 이력 관리</li>
           </ul>
@@ -118,12 +118,12 @@
         <article class="product" id="judge" aria-labelledby="judge-name">
           <div class="product-head">
             <div class="product-name" style="--c:var(--product-judge)"><h3 id="judge-name">Judge</h3><span class="product-line">MODEL LINE</span></div>
-            <p class="lead">답변의 품질과 보안을 같은 기준으로 잽니다.</p>
-            <p>모델이나 프롬프트가 바뀌어도 같은 질문과 기준으로 비교합니다. RAG는 검색 근거와 생성 답변을 나눠 보고, 출시 전에는 보안 공격을 측정합니다.</p>
+            <p class="lead">답변의 품질과 보안을 같은 기준으로 측정합니다.</p>
+            <p>모델이나 프롬프트가 바뀌어도 같은 질문과 기준으로 비교합니다. RAG는 검색 근거와 생성 답변을 나눠 보고, 배포 전에는 보안 공격을 측정합니다.</p>
             <p><a class="text-link" href="/contact?product=judge">Judge 도입 상담 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></p>
           </div>
           <ul class="checks">
-            <li>다중 심사위원: 사실 일치·완전성·기준 부합</li>
+            <li>여러 평가 모델(LLM 심사)로 사실 일치·완전성·기준 부합 채점</li>
             <li>범용 역량 퇴화(망각)·한국어 자연성 측정</li>
             <li>프롬프트 인젝션·탈옥·개인정보 유출 점검</li>
             <li>버전별 추이와 회귀, 사람 검토와 부분 재실행</li>
@@ -147,13 +147,13 @@
           <div class="product-head">
             <div class="product-name"><h3 id="agent-name">Agent</h3><span class="product-line">AGENT LINE</span></div>
             <p class="lead">현업이 UI에서 에이전트를 만들고, 조직 권한 안에서 실행합니다.</p>
-            <p>Index로 만든 검색 자산과 사내 API·DB를 도구로 연결해 업무별 에이전트를 만듭니다. 실행은 조직도 기반 권한 안에서만 이뤄집니다.</p>
+            <p>Index로 만든 검색 자산과 사내 API·DB를 도구로 연결해 업무별 에이전트를 만듭니다. 조직도·권한 시스템을 연동하면 실행도 그 권한 안에서만 이뤄집니다.</p>
             <p><a class="text-link" href="/contact?product=agent">Agent 도입 상담 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></p>
           </div>
           <ul class="checks">
             <li>입력 보안 체크 → 의도 분류 → 실행 → 출력의 흐름</li>
             <li>API·DB·MCP를 도구로 등록해 호출</li>
-            <li>조직도 기반 권한: 열람할 수 없는 자료는 검색에서 제외</li>
+            <li>조직도·권한 시스템 연동: 열람 권한이 없는 자료는 검색에서 제외</li>
           </ul>
         </article>
       </div>
@@ -168,8 +168,8 @@
       </div>
       <div class="prose">
         <p>Studio가 만든 학습 패키지는 Forge로, Forge가 만든 모델은 Judge로 바로 넘어갑니다. 제품끼리 정해진 형식으로 주고받기 때문에 한 제품을 먼저 도입하고 나머지를 나중에 붙여도 됩니다.</p>
-        <p>운영 중에 쌓인 질문·답변 로그는 비식별 처리를 거쳐 검색 보강과 재학습 데이터로 되돌아갑니다. 쓸수록 데이터가 쌓입니다.</p>
-        <p>두 라인 모두 온프레미스·망분리 환경에 설치됩니다. <a class="text-link" href="/security">보안·구축 방식 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></p>
+        <p>운영 중에 쌓인 질문·답변 로그는 비식별 처리하고, 고객이 승인한 범위만 검색 보강과 재학습 데이터로 씁니다.</p>
+        <p>두 라인 모두 온프레미스·폐쇄망(망분리 포함) 환경에 설치됩니다. <a class="text-link" href="/security">보안·구축 방식 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></p>
       </div>
     </div>
   </section>
@@ -214,7 +214,7 @@
     <div class="container">
       <div class="cta-box">
         <div>
-          <h2 id="cta-title">필요한 제품부터 시작하세요.</h2>
+          <h2 id="cta-title">필요한 제품부터 시작할 수 있습니다.</h2>
           <p>어떤 업무에 어떤 제품이 맞는지 함께 정리합니다.</p>
         </div>
         <a class="button navy" href="/contact">도입 상담 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>

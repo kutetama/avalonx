@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CSS_VERSION = "20261103c"  # CSS·JS·서체를 바꾸면 올린다 (캐시 갱신, site.css의 서체 URL에도 반영됨)
+CSS_VERSION = "20261103d"  # CSS·JS·서체를 바꾸면 올린다 (캐시 갱신, site.css의 서체 URL에도 반영됨)
 
 ASSETS = f"""<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/ax-sans.woff2?v={CSS_VERSION}" as="font" type="font/woff2" crossorigin>
