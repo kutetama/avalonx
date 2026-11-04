@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CSS_VERSION = "20261104a"  # CSS·JS·서체를 바꾸면 올린다 (캐시 갱신, site.css의 서체 URL에도 반영됨)
+CSS_VERSION = "20261104b"  # CSS·JS·서체를 바꾸면 올린다 (캐시 갱신, site.css의 서체 URL에도 반영됨)
 
 ASSETS = f"""<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/ax-sans.woff2?v={CSS_VERSION}" as="font" type="font/woff2" crossorigin>
@@ -63,7 +63,7 @@ def _footer() -> str:
   <div class="footer-top">
     <img class="footer-mark" src="/assets/brand/avalonx-wordmark-on-dark.svg" width="681" height="98" alt="AvalonX">
     <div class="footer-cols">
-      <div><h2>AvalonX</h2><ul><li><a href="/about">아발론엑스</a></li><li><a href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a></li></ul></div>
+      <div><h2>AvalonX</h2><ul><li><a href="/about">아발론엑스</a></li><li><a href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a></li><li><address>서울특별시 강남구 언주로 535 11층</address></li></ul></div>
       <div><h2>Menu</h2><ul><li><a href="/toaster">Toaster</a></li><li><a href="/security">보안·구축</a></li><li><a href="/about">회사</a></li><li><a href="/contact">도입 문의</a></li></ul></div>
       <div><h2>Toaster</h2><ul>{prods}</ul></div>
     </div>

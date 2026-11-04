@@ -6,10 +6,10 @@
  */
 
 /* 서체: 사이트에 쓰인 글자만 남긴 자체 호스팅 서브셋 (tools/subset-fonts.py). SIL OFL 1.1 — assets/fonts/LICENSE.md */
-@font-face { font-family: "AX Sans"; src: url("/assets/fonts/ax-sans.woff2?v=20261104a") format("woff2"); font-weight: 45 920; font-display: swap; }
-@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-700.woff2?v=20261104a") format("woff2"); font-weight: 700; font-display: swap; }
-@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-800.woff2?v=20261104a") format("woff2"); font-weight: 800; font-display: swap; }
-@font-face { font-family: "AX Pixel"; src: url("/assets/fonts/ax-pixel.woff2?v=20261104a") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "AX Sans"; src: url("/assets/fonts/ax-sans.woff2?v=20261104b") format("woff2"); font-weight: 45 920; font-display: swap; }
+@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-700.woff2?v=20261104b") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-800.woff2?v=20261104b") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "AX Pixel"; src: url("/assets/fonts/ax-pixel.woff2?v=20261104b") format("woff2"); font-weight: 400; font-display: swap; }
 
 :root {
   color-scheme: light;
@@ -438,3 +438,5 @@ a.row:hover .name { color: var(--blue); transform: translateX(10px); }
 @media (max-width: 760px) { .contact-cta { min-height: 0; gap: 40px; } .intro { min-height: 0; } }
 .case, .case-stage > * { min-width: 0; }
 .case-title { overflow-wrap: anywhere; }
+address { font-style: normal; }
+.footer-cols address { color: var(--d-body); font-size: .9375rem; max-width: 16rem; }
