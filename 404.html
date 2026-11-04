@@ -17,13 +17,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- @assets -->
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/assets/fonts/ax-sans.woff2?v=20261103d" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/ax-heading-800.woff2?v=20261103d" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ax-sans.woff2?v=20261104a" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ax-heading-800.woff2?v=20261104a" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Unbounded:wght@800&display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261103d">
-<script src="/js/main.js?v=20261103d" defer></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="/css/site.css?v=20261104a">
+<script src="/js/main.js?v=20261104a" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PF8YSG744"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0PF8YSG744');</script>
 <!-- /@assets -->
@@ -32,53 +32,38 @@
 <!-- @header -->
 <a class="skip-link" href="#main">본문 바로가기</a>
 <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/" aria-label="AvalonX 홈"><img src="/assets/brand/avalonx-wordmark-on-dark.svg" width="182" height="26" alt="AvalonX"></a>
-    <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu" hidden><span></span><span></span></button>
-    <nav id="site-menu" class="site-nav" aria-label="주 메뉴">
-      <a href="/toaster">Toaster</a>
-      <a href="/security">보안·구축</a>
-      <a href="/about">회사</a>
-      <a href="/contact" class="nav-contact">도입 문의</a>
-    </nav>
-  </div>
+  <a class="brand" href="/" aria-label="AvalonX 홈"><img src="/assets/brand/avalonx-wordmark-on-light.svg" width="224" height="32" alt="AvalonX"></a>
+  <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu" hidden>Menu <span class="dot" aria-hidden="true"></span></button>
+  <nav id="site-menu" class="site-nav" aria-label="주 메뉴">
+    <a href="/toaster">Toaster</a>
+    <a href="/security">보안·구축</a>
+    <a href="/about">회사</a>
+    <a href="/contact" class="nav-contact">도입 문의</a>
+  </nav>
 </header>
+<a class="quick" href="/contact">도입 문의</a>
 <!-- /@header -->
 
 <main id="main">
-<section class="notfound">
-    <div class="inner">
-      <div class="scatter" aria-hidden="true"><i></i><i></i><i class="y"></i><i></i><i></i><i></i><i class="p"></i><i></i><i></i><i></i><i></i><i class="s"></i></div>
-      <p class="code">404</p>
-      <h1>페이지를 찾을 수 없습니다.</h1>
-      <p>주소가 바뀌었거나 없어진 페이지입니다.</p>
-      <div class="hero-actions">
-        <a class="button primary" href="/">홈으로 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
-        <a class="button secondary" href="/contact">도입 문의</a>
-      </div>
-    </div>
+<section class="nf">
+    <p class="giant" aria-hidden="true">404<span class="blue">.</span></p>
+    <h1 class="display" style="font-size:clamp(1.75rem,1.2rem + 2vw,3rem)">페이지를 찾을 수 없습니다.</h1>
+    <p class="lede">주소가 바뀌었거나 없어진 페이지입니다.</p>
+    <p style="display:flex;gap:12px;flex-wrap:wrap"><a class="pill solid" href="/">홈으로 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a class="pill" href="/contact">도입 문의</a></p>
   </section>
 </main>
 
 <!-- @footer -->
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="/assets/brand/avalonx-wordmark-on-dark.svg" width="154" height="22" alt="AvalonX" loading="lazy">
-        <p>당신의 데이터로, 당신의 환경에서.</p>
-      </div>
-      <nav class="footer-links" aria-label="하단 메뉴">
-        <a href="/toaster">Toaster</a>
-        <a href="/security">보안·구축</a>
-        <a href="/about">회사</a>
-        <a href="/contact">도입 문의</a>
-      </nav>
-      <a class="footer-email" href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a>
+  <div class="footer-top">
+    <img class="footer-mark" src="/assets/brand/avalonx-wordmark-on-dark.svg" width="681" height="98" alt="AvalonX">
+    <div class="footer-cols">
+      <div><h2>AvalonX</h2><ul><li><a href="/about">아발론엑스</a></li><li><a href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a></li></ul></div>
+      <div><h2>Menu</h2><ul><li><a href="/toaster">Toaster</a></li><li><a href="/security">보안·구축</a></li><li><a href="/about">회사</a></li><li><a href="/contact">도입 문의</a></li></ul></div>
+      <div><h2>Toaster</h2><ul><li><a href="/toaster#studio">Studio</a></li><li><a href="/toaster#forge">Forge</a></li><li><a href="/toaster#judge">Judge</a></li><li><a href="/toaster#index">Index</a></li><li><a href="/toaster#agent">Agent</a></li></ul></div>
     </div>
-    <p class="footer-products"><span>제품</span><a href="/toaster#studio">Studio</a><a href="/toaster#forge">Forge</a><a href="/toaster#judge">Judge</a><a href="/toaster#index">Index</a><a href="/toaster#agent">Agent</a></p>
-    <div class="footer-bottom"><span>© 2026 AvalonX · 아발론엑스</span><span>Own your AI.</span></div>
   </div>
+  <div class="footer-bottom"><span>© 2026 AvalonX · 아발론엑스. Own your AI.</span><a href="#main">맨 위로 ↑</a></div>
 </footer>
 <!-- /@footer -->
 </body>

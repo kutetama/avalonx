@@ -17,13 +17,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- @assets -->
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/assets/fonts/ax-sans.woff2?v=20261103d" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/ax-heading-800.woff2?v=20261103d" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ax-sans.woff2?v=20261104a" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ax-heading-800.woff2?v=20261104a" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Unbounded:wght@800&display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261103d">
-<script src="/js/main.js?v=20261103d" defer></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="/css/site.css?v=20261104a">
+<script src="/js/main.js?v=20261104a" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PF8YSG744"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0PF8YSG744');</script>
 <!-- /@assets -->
@@ -32,81 +32,54 @@
 <!-- @header -->
 <a class="skip-link" href="#main">본문 바로가기</a>
 <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/" aria-label="AvalonX 홈"><img src="/assets/brand/avalonx-wordmark-on-dark.svg" width="182" height="26" alt="AvalonX"></a>
-    <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu" hidden><span></span><span></span></button>
-    <nav id="site-menu" class="site-nav" aria-label="주 메뉴">
-      <a href="/toaster">Toaster</a>
-      <a href="/security" aria-current="page">보안·구축</a>
-      <a href="/about">회사</a>
-      <a href="/contact" class="nav-contact">도입 문의</a>
-    </nav>
-  </div>
+  <a class="brand" href="/" aria-label="AvalonX 홈"><img src="/assets/brand/avalonx-wordmark-on-light.svg" width="224" height="32" alt="AvalonX"></a>
+  <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu" hidden>Menu <span class="dot" aria-hidden="true"></span></button>
+  <nav id="site-menu" class="site-nav" aria-label="주 메뉴">
+    <a href="/toaster">Toaster</a>
+    <a href="/security" aria-current="page">보안·구축</a>
+    <a href="/about">회사</a>
+    <a href="/contact" class="nav-contact">도입 문의</a>
+  </nav>
 </header>
+<a class="quick" href="/contact">도입 문의</a>
 <!-- /@header -->
 
 <main id="main">
-<section class="page-intro">
-    <div class="container">
-      <div class="page-intro-copy">
-        <p class="eyebrow">Security &amp; Deployment</p>
+<section class="page-hero">
+    <p class="giant" aria-hidden="true">Security<span class="blue">.</span></p>
+    <div class="page-hero-body">
+      <div>
         <h1>폐쇄망 설치, 권한 통제, 감사 로그는 <em>기본값</em>입니다.</h1>
-        <p>Toaster는 고객 환경 안에 설치됩니다. 데이터가 밖으로 나가는 범위를 먼저 정하고, 그 위에서 모델과 에이전트를 만듭니다.</p>
+        <p class="lede">Toaster는 고객 환경 안에 설치됩니다. 데이터가 밖으로 나가는 범위를 먼저 정하고, 그 위에서 모델과 에이전트를 만듭니다.</p>
       </div>
       <div class="scatter" aria-hidden="true"><i class="p"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="y"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="s"></i><i></i><i></i><i></i><i class="y"></i></div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="security-title">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">01 · Security</p>
-        <h2 id="security-title">설계 단계부터 넣어 둔 네 가지.</h2>
-      </div>
-      <ul class="security-grid">
-        <li class="security-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-          <div><h3>프라이빗 배포</h3><p>온프레미스·폐쇄망(망분리 포함) 환경에 설치합니다. 학습과 서빙, 평가까지 외부 API 없이도 고객 GPU에서 처리할 수 있으며, 외부 모델 API를 쓸지는 고객이 정합니다.</p></div>
-        </li>
-        <li class="security-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9m-4 4 3 3m-6 0 2 2"/></svg>
-          <div><h3>권한 선검증</h3><p>조직도·권한 시스템을 연동해 권한을 가장 먼저 확인합니다. 연동하면 열람 권한이 없는 자료는 검색 대상에서 빠집니다.</p></div>
-        </li>
-        <li class="security-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
-          <div><h3>입력 보안 체크</h3><p>개인정보 포함, 프롬프트 인젝션, 금지 주제, 업무 범위 이탈 여부를 먼저 판단하고, 위반 유형별로 정해 둔 응답으로 대체합니다.</p></div>
-        </li>
-        <li class="security-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4m0 4h.01"/></svg>
-          <div><h3>배포 전 보안 점검</h3><p>인젝션·탈옥·시스템 프롬프트 유출을 측정합니다. 치명적인 공격이 한 건이라도 통하면 그 버전은 배포하지 않습니다.</p></div>
-        </li>
-      </ul>
-      <p class="compare-note">학습·검색 보강에 쓰는 로그는 비식별 처리 후에만 쌓습니다. 감사 로그는 따로 보관하며, 보관 기간과 환류 승인 절차는 고객의 보안 정책에 맞춰 설정합니다. 개별 규정 준수 여부는 고객 환경에서 함께 확인합니다.</p>
-    </div>
+  <section class="section dark" aria-labelledby="security-title">
+    <div class="sec-title"><div><p class="label" style="color:var(--d-muted)">01 · Security</p><h2 class="display" id="security-title" style="margin-top:20px">설계 단계부터<br>넣어 둔 <span class="yellow">네 가지</span>.</h2></div>
+      <p class="aside small">학습·검색 보강에 쓰는 로그는 비식별 처리 후에만 쌓습니다. 감사 로그는 따로 보관하며, 보관 기간과 환류 승인 절차는 고객의 보안 정책에 맞춰 설정합니다. 개별 규정 준수 여부는 고객 환경에서 함께 확인합니다.</p></div>
+    <ul class="rows" style="margin-top:0">
+        <li class="row"><span class="num">01</span><h3 class="name">프라이빗 배포</h3><p class="desc">온프레미스·폐쇄망(망분리 포함) 환경에 설치합니다. 학습과 서빙, 평가까지 외부 API 없이도 고객 GPU에서 처리할 수 있으며, 외부 모델 API를 쓸지는 고객이 정합니다.</p></li>
+        <li class="row"><span class="num">02</span><h3 class="name">권한 선검증</h3><p class="desc">조직도·권한 시스템을 연동해 권한을 가장 먼저 확인합니다. 연동하면 열람 권한이 없는 자료는 검색 대상에서 빠집니다.</p></li>
+        <li class="row"><span class="num">03</span><h3 class="name">입력 보안 체크</h3><p class="desc">개인정보 포함, 프롬프트 인젝션, 금지 주제, 업무 범위 이탈 여부를 먼저 판단하고, 위반 유형별로 정해 둔 응답으로 대체합니다.</p></li>
+        <li class="row"><span class="num">04</span><h3 class="name">배포 전 보안 점검</h3><p class="desc">인젝션·탈옥·시스템 프롬프트 유출을 측정합니다. 치명적인 공격이 한 건이라도 통하면 그 버전은 배포하지 않습니다.</p></li>
+    </ul>
   </section>
 
-  <section class="section" aria-labelledby="check-title">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">02 · Before you start</p>
-        <h2 id="check-title">도입 전에 함께 확인합니다.</h2>
-        <p>설치 환경과 운영 조건을 먼저 맞춰 두면 PoC가 늦어지지 않습니다.</p>
-      </div>
-      <ul class="spec-grid">
-        <li><h3>데이터와 모델 연결</h3><p>쓸 수 있는 자료와 접근 권한, 사내 모델 API 또는 외부 모델 API의 사용 범위를 확인합니다. 외부 API를 쓰는 경우 밖으로 나가는 데이터의 범위도 함께 정합니다.</p></li>
-        <li><h3>학습과 추론 자원</h3><p>웹 애플리케이션과 모델 실행 자원을 나눠 설계합니다. 필요한 GPU와 메모리는 모델 크기, 학습 방식, 동시 작업 수에 따라 정합니다.</p></li>
-        <li><h3>설치 환경과 폐쇄망</h3><p>온프레미스와 폐쇄망에 설치합니다. 폐쇄망에서는 모델 파일, 실행 이미지, 패키지 반입과 업데이트 절차를 미리 준비합니다.</p></li>
-        <li><h3>운영과 접근 정책</h3><p>사용자 역할, 데이터 보관, 백업과 복구 범위를 정합니다. SSO, 고가용성, 조직별 격리 같은 요구사항은 별도 설계 범위로 확인합니다.</p></li>
-      </ul>
-    </div>
+  <section class="section paper" aria-labelledby="check-title">
+    <div class="sec-title"><div><p class="label">02 · Before you start</p><h2 class="display" id="check-title" style="margin-top:20px">도입 전에<br>함께 확인합니다.</h2></div><p class="aside small">설치 환경과 운영 조건을 먼저 맞춰 두면 PoC가 늦어지지 않습니다.</p></div>
+    <ul class="grid2">
+      <li><h3>데이터와 모델 연결</h3><p>쓸 수 있는 자료와 접근 권한, 사내 모델 API 또는 외부 모델 API의 사용 범위를 확인합니다. 외부 API를 쓰는 경우 밖으로 나가는 데이터의 범위도 함께 정합니다.</p></li>
+      <li><h3>학습과 추론 자원</h3><p>웹 애플리케이션과 모델 실행 자원을 나눠 설계합니다. 필요한 GPU와 메모리는 모델 크기, 학습 방식, 동시 작업 수에 따라 정합니다.</p></li>
+      <li><h3>설치 환경과 폐쇄망</h3><p>온프레미스와 폐쇄망에 설치합니다. 폐쇄망에서는 모델 파일, 실행 이미지, 패키지 반입과 업데이트 절차를 미리 준비합니다.</p></li>
+      <li><h3>운영과 접근 정책</h3><p>사용자 역할, 데이터 보관, 백업과 복구 범위를 정합니다. SSO, 고가용성, 조직별 격리 같은 요구사항은 별도 설계 범위로 확인합니다.</p></li>
+    </ul>
   </section>
 
   <section class="section" aria-labelledby="integrate-title">
-    <div class="container split">
-      <div class="section-head">
-        <p class="eyebrow">03 · Integration</p>
-        <h2 id="integrate-title">기존 업무 시스템과의 연결까지 봅니다.</h2>
-      </div>
+    <div class="split">
+      <div><p class="label">03 · Integration</p><h2 class="display" id="integrate-title" style="margin-top:20px">기존 업무 시스템과의<br>연결까지 봅니다.</h2></div>
       <div class="prose">
         <p>문서 기반 지식 검색, 데이터베이스 질의, API를 쓰는 업무 자동화처럼 지금의 환경에 맞는 적용 방향을 함께 정합니다.</p>
         <p>학습·평가 제품의 도입 범위, 업무 시스템 연동 범위, 운영 모델 서빙 범위는 목적에 따라 나눠 설계합니다.</p>
@@ -115,38 +88,23 @@
     </div>
   </section>
 
-  <section class="cta" aria-labelledby="cta-title">
-    <div class="container">
-      <div class="cta-box">
-        <div>
-          <h2 id="cta-title">보안 요건부터 맞춥니다.</h2>
-          <p>설치 환경과 보안 정책을 알려주시면 확인할 항목을 정리해 회신합니다.</p>
-        </div>
-        <a class="button navy" href="/contact">도입 상담 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
-      </div>
-    </div>
+  <section class="section contact-cta" aria-labelledby="cta-title">
+    <div class="head-row"><p class="label">Have a task in mind?</p><p class="aside small muted">설치 환경과 보안 정책을 알려주시면<br>확인할 항목을 정리해 회신합니다.</p></div>
+    <h2 class="display" id="cta-title">보안 요건부터<br>맞춥니다.<br><a class="go" href="/contact">도입 상담 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></h2>
   </section>
 </main>
 
 <!-- @footer -->
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="/assets/brand/avalonx-wordmark-on-dark.svg" width="154" height="22" alt="AvalonX" loading="lazy">
-        <p>당신의 데이터로, 당신의 환경에서.</p>
-      </div>
-      <nav class="footer-links" aria-label="하단 메뉴">
-        <a href="/toaster">Toaster</a>
-        <a href="/security">보안·구축</a>
-        <a href="/about">회사</a>
-        <a href="/contact">도입 문의</a>
-      </nav>
-      <a class="footer-email" href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a>
+  <div class="footer-top">
+    <img class="footer-mark" src="/assets/brand/avalonx-wordmark-on-dark.svg" width="681" height="98" alt="AvalonX">
+    <div class="footer-cols">
+      <div><h2>AvalonX</h2><ul><li><a href="/about">아발론엑스</a></li><li><a href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a></li></ul></div>
+      <div><h2>Menu</h2><ul><li><a href="/toaster">Toaster</a></li><li><a href="/security">보안·구축</a></li><li><a href="/about">회사</a></li><li><a href="/contact">도입 문의</a></li></ul></div>
+      <div><h2>Toaster</h2><ul><li><a href="/toaster#studio">Studio</a></li><li><a href="/toaster#forge">Forge</a></li><li><a href="/toaster#judge">Judge</a></li><li><a href="/toaster#index">Index</a></li><li><a href="/toaster#agent">Agent</a></li></ul></div>
     </div>
-    <p class="footer-products"><span>제품</span><a href="/toaster#studio">Studio</a><a href="/toaster#forge">Forge</a><a href="/toaster#judge">Judge</a><a href="/toaster#index">Index</a><a href="/toaster#agent">Agent</a></p>
-    <div class="footer-bottom"><span>© 2026 AvalonX · 아발론엑스</span><span>Own your AI.</span></div>
   </div>
+  <div class="footer-bottom"><span>© 2026 AvalonX · 아발론엑스. Own your AI.</span><a href="#main">맨 위로 ↑</a></div>
 </footer>
 <!-- /@footer -->
 </body>

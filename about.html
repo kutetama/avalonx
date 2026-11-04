@@ -17,13 +17,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- @assets -->
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/assets/fonts/ax-sans.woff2?v=20261103d" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/ax-heading-800.woff2?v=20261103d" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ax-sans.woff2?v=20261104a" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ax-heading-800.woff2?v=20261104a" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Unbounded:wght@800&display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261103d">
-<script src="/js/main.js?v=20261103d" defer></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="/css/site.css?v=20261104a">
+<script src="/js/main.js?v=20261104a" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PF8YSG744"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0PF8YSG744');</script>
 <!-- /@assets -->
@@ -32,67 +32,54 @@
 <!-- @header -->
 <a class="skip-link" href="#main">본문 바로가기</a>
 <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/" aria-label="AvalonX 홈"><img src="/assets/brand/avalonx-wordmark-on-dark.svg" width="182" height="26" alt="AvalonX"></a>
-    <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu" hidden><span></span><span></span></button>
-    <nav id="site-menu" class="site-nav" aria-label="주 메뉴">
-      <a href="/toaster">Toaster</a>
-      <a href="/security">보안·구축</a>
-      <a href="/about" aria-current="page">회사</a>
-      <a href="/contact" class="nav-contact">도입 문의</a>
-    </nav>
-  </div>
+  <a class="brand" href="/" aria-label="AvalonX 홈"><img src="/assets/brand/avalonx-wordmark-on-light.svg" width="224" height="32" alt="AvalonX"></a>
+  <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu" hidden>Menu <span class="dot" aria-hidden="true"></span></button>
+  <nav id="site-menu" class="site-nav" aria-label="주 메뉴">
+    <a href="/toaster">Toaster</a>
+    <a href="/security">보안·구축</a>
+    <a href="/about" aria-current="page">회사</a>
+    <a href="/contact" class="nav-contact">도입 문의</a>
+  </nav>
 </header>
+<a class="quick" href="/contact">도입 문의</a>
 <!-- /@header -->
 
 <main id="main">
-<section class="page-intro">
-    <div class="container">
-      <div class="page-intro-copy">
-        <p class="eyebrow">About AvalonX</p>
+<section class="page-hero">
+    <p class="giant" aria-hidden="true">About<span class="blue">.</span></p>
+    <div class="page-hero-body">
+      <div>
         <h1>누구나 자기 데이터로<br><em>자기 AI</em>를 만들고 운영하게 합니다.</h1>
-        <p>AvalonX는 규제 산업과 공공을 위한 프라이빗 AI 플랫폼 Toaster를 만드는 회사입니다.</p>
+        <p class="lede">AvalonX는 규제 산업과 공공을 위한 프라이빗 AI 플랫폼 Toaster를 만드는 회사입니다.</p>
       </div>
       <div class="scatter" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="s"></i><i></i><i></i><i class="y"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="p"></i><i></i><i></i></div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="vision-title">
-    <div class="container split">
-      <div class="section-head">
-        <p class="eyebrow">01 · Vision</p>
-        <h2 id="vision-title">우리가 만들려는 세상</h2>
-      </div>
+  <section class="section paper" aria-labelledby="vision-title">
+    <div class="split">
+      <div><p class="label">01 · Vision</p><h2 class="display" id="vision-title" style="margin-top:20px">우리가 만들려는 세상</h2></div>
       <div class="prose">
-        <p class="statement">현업 담당자가 개발자 없이도 <em>신뢰할 수 있는 AI 에이전트</em>를 만드는 조직이 당연해지는 세상.</p>
+        <p class="statement">현업 담당자가 개발자 없이도 <span class="blue">신뢰할 수 있는 AI 에이전트</span>를 만드는 조직이 당연해지는 세상.</p>
         <p>AI 도입은 외부에 맡기는 일회성 과제로 끝나는 경우가 많습니다. AvalonX는 데이터·모델·에이전트가 고객의 자산으로 남고, 고객이 직접 고치고 늘려 갈 수 있는 기반을 제품으로 만듭니다.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="values-title">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">02 · Values</p>
-        <h2 id="values-title">일하는 기준 다섯 가지</h2>
-        <p>기준이 서로 부딪히면 소유권, 검증 우선, 보안·규제 준수를 먼저 지킵니다.</p>
-      </div>
-      <ul class="values">
-        <li class="value"><span class="no" aria-hidden="true">01</span><h3>소유권</h3><p>데이터·모델·에이전트는 고객의 것입니다. 빠져나갈 수 없게 묶어 두는 설계를 하지 않습니다.</p></li>
-        <li class="value"><span class="no" aria-hidden="true">02</span><h3>검증 우선</h3><p>측정할 수 없으면 출시하지 않습니다. 버전마다 같은 기준으로 품질과 보안을 측정합니다.</p></li>
-        <li class="value"><span class="no" aria-hidden="true">03</span><h3>가볍게</h3><p>검증된 엔진 위에 얹습니다. 포크하거나 중복 구현하거나 거대한 설치를 만들지 않습니다.</p></li>
-        <li class="value"><span class="no" aria-hidden="true">04</span><h3>현업 손에</h3><p>개발자를 거쳐야만 쓸 수 있는 기능은 아직 완성되지 않은 것으로 봅니다.</p></li>
-        <li class="value"><span class="no" aria-hidden="true">05</span><h3>보안·규제 준수</h3><p>프라이빗 배포와 권한·감사 가능성은 옵션이 아니라 기본값입니다.</p></li>
-      </ul>
-    </div>
+  <section class="section dark" aria-labelledby="values-title">
+    <div class="sec-title"><div><p class="label" style="color:var(--d-muted)">02 · Values</p><h2 class="display" id="values-title" style="margin-top:20px">일하는 기준<br><span class="yellow">다섯 가지</span></h2></div><p class="aside small">기준이 서로 부딪히면 소유권, 검증 우선, 보안·규제 준수를 먼저 지킵니다.</p></div>
+    <ul class="rows" style="margin-top:0">
+        <li class="row"><span class="num">01</span><h3 class="name">소유권</h3><p class="desc">데이터·모델·에이전트는 고객의 것입니다. 빠져나갈 수 없게 묶어 두는 설계를 하지 않습니다.</p></li>
+        <li class="row"><span class="num">02</span><h3 class="name">검증 우선</h3><p class="desc">측정할 수 없으면 출시하지 않습니다. 버전마다 같은 기준으로 품질과 보안을 측정합니다.</p></li>
+        <li class="row"><span class="num">03</span><h3 class="name">가볍게</h3><p class="desc">검증된 엔진 위에 얹습니다. 포크하거나 중복 구현하거나 거대한 설치를 만들지 않습니다.</p></li>
+        <li class="row"><span class="num">04</span><h3 class="name">현업 손에</h3><p class="desc">개발자를 거쳐야만 쓸 수 있는 기능은 아직 완성되지 않은 것으로 봅니다.</p></li>
+        <li class="row"><span class="num">05</span><h3 class="name">보안·규제 준수</h3><p class="desc">프라이빗 배포와 권한·감사 가능성은 옵션이 아니라 기본값입니다.</p></li>
+    </ul>
   </section>
 
   <section class="section" aria-labelledby="name-title">
-    <div class="container split">
-      <div class="section-head">
-        <p class="eyebrow">03 · Name</p>
-        <h2 id="name-title">AvalonX라는 이름</h2>
-      </div>
+    <div class="split">
+      <div><p class="label">03 · Name</p><h2 class="display" id="name-title" style="margin-top:20px">AvalonX라는 이름</h2></div>
       <div class="prose">
         <p>전설 속 이상향 아발론(Avalon)에 X를 더했습니다. X는 AI transformation, 그리고 그 일을 해내는 팀을 뜻합니다.</p>
         <dl class="facts">
@@ -104,38 +91,23 @@
     </div>
   </section>
 
-  <section class="cta" aria-labelledby="cta-title">
-    <div class="container">
-      <div class="cta-box">
-        <div>
-          <h2 id="cta-title">회사·제품 문의는 이메일로 받습니다.</h2>
-          <p>homepage@avalonx.kr로 보내 주시면 담당자가 회신합니다.</p>
-        </div>
-        <a class="button navy" href="/contact">도입 상담 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
-      </div>
-    </div>
+  <section class="section contact-cta" aria-labelledby="cta-title">
+    <div class="head-row"><p class="label">Say hello</p><p class="aside small muted">homepage@avalonx.kr로 보내 주시면<br>담당자가 회신합니다.</p></div>
+    <h2 class="display" id="cta-title">회사·제품 문의는<br>이메일로 받습니다.<br><a class="go" href="mailto:homepage@avalonx.kr">이메일 보내기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></h2>
   </section>
 </main>
 
 <!-- @footer -->
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="/assets/brand/avalonx-wordmark-on-dark.svg" width="154" height="22" alt="AvalonX" loading="lazy">
-        <p>당신의 데이터로, 당신의 환경에서.</p>
-      </div>
-      <nav class="footer-links" aria-label="하단 메뉴">
-        <a href="/toaster">Toaster</a>
-        <a href="/security">보안·구축</a>
-        <a href="/about">회사</a>
-        <a href="/contact">도입 문의</a>
-      </nav>
-      <a class="footer-email" href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a>
+  <div class="footer-top">
+    <img class="footer-mark" src="/assets/brand/avalonx-wordmark-on-dark.svg" width="681" height="98" alt="AvalonX">
+    <div class="footer-cols">
+      <div><h2>AvalonX</h2><ul><li><a href="/about">아발론엑스</a></li><li><a href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a></li></ul></div>
+      <div><h2>Menu</h2><ul><li><a href="/toaster">Toaster</a></li><li><a href="/security">보안·구축</a></li><li><a href="/about">회사</a></li><li><a href="/contact">도입 문의</a></li></ul></div>
+      <div><h2>Toaster</h2><ul><li><a href="/toaster#studio">Studio</a></li><li><a href="/toaster#forge">Forge</a></li><li><a href="/toaster#judge">Judge</a></li><li><a href="/toaster#index">Index</a></li><li><a href="/toaster#agent">Agent</a></li></ul></div>
     </div>
-    <p class="footer-products"><span>제품</span><a href="/toaster#studio">Studio</a><a href="/toaster#forge">Forge</a><a href="/toaster#judge">Judge</a><a href="/toaster#index">Index</a><a href="/toaster#agent">Agent</a></p>
-    <div class="footer-bottom"><span>© 2026 AvalonX · 아발론엑스</span><span>Own your AI.</span></div>
   </div>
+  <div class="footer-bottom"><span>© 2026 AvalonX · 아발론엑스. Own your AI.</span><a href="#main">맨 위로 ↑</a></div>
 </footer>
 <!-- /@footer -->
 </body>

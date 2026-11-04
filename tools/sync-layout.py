@@ -18,62 +18,61 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CSS_VERSION = "20261103d"  # CSS·JS·서체를 바꾸면 올린다 (캐시 갱신, site.css의 서체 URL에도 반영됨)
+CSS_VERSION = "20261104a"  # CSS·JS·서체를 바꾸면 올린다 (캐시 갱신, site.css의 서체 URL에도 반영됨)
 
 ASSETS = f"""<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/ax-sans.woff2?v={CSS_VERSION}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/ax-heading-800.woff2?v={CSS_VERSION}" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Unbounded:wght@800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap">
 <link rel="stylesheet" href="/css/site.css?v={CSS_VERSION}">
 <script src="/js/main.js?v={CSS_VERSION}" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PF8YSG744"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-0PF8YSG744');</script>"""
 
 NAV = [("toaster", "/toaster", "Toaster"), ("security", "/security", "보안·구축"), ("about", "/about", "회사")]
+PRODUCTS = [("studio", "Studio"), ("forge", "Forge"), ("judge", "Judge"), ("index", "Index"), ("agent", "Agent")]
 
 ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>'
+NE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>'
 
 
 def header(page: str) -> str:
     cur = ' aria-current="page"'
     links = "\n".join(
-        f'      <a href="{href}"{cur if key == page else ""}>{label}</a>' for key, href, label in NAV
+        f'    <a href="{href}"{cur if key == page else ""}>{label}</a>' for key, href, label in NAV
     )
     contact_cur = cur if page == "contact" else ""
+    # 문의 페이지에서는 플로팅 문의 버튼을 두지 않는다
+    quick = "" if page == "contact" else '\n<a class="quick" href="/contact">도입 문의</a>'
     return f"""<a class="skip-link" href="#main">본문 바로가기</a>
 <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/" aria-label="AvalonX 홈"><img src="/assets/brand/avalonx-wordmark-on-dark.svg" width="182" height="26" alt="AvalonX"></a>
-    <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu" hidden><span></span><span></span></button>
-    <nav id="site-menu" class="site-nav" aria-label="주 메뉴">
+  <a class="brand" href="/" aria-label="AvalonX 홈"><img src="/assets/brand/avalonx-wordmark-on-light.svg" width="224" height="32" alt="AvalonX"></a>
+  <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu" hidden>Menu <span class="dot" aria-hidden="true"></span></button>
+  <nav id="site-menu" class="site-nav" aria-label="주 메뉴">
 {links}
-      <a href="/contact" class="nav-contact"{contact_cur}>도입 문의</a>
-    </nav>
-  </div>
-</header>"""
+    <a href="/contact" class="nav-contact"{contact_cur}>도입 문의</a>
+  </nav>
+</header>{quick}"""
 
 
-FOOTER = """<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="/assets/brand/avalonx-wordmark-on-dark.svg" width="154" height="22" alt="AvalonX" loading="lazy">
-        <p>당신의 데이터로, 당신의 환경에서.</p>
-      </div>
-      <nav class="footer-links" aria-label="하단 메뉴">
-        <a href="/toaster">Toaster</a>
-        <a href="/security">보안·구축</a>
-        <a href="/about">회사</a>
-        <a href="/contact">도입 문의</a>
-      </nav>
-      <a class="footer-email" href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a>
+def _footer() -> str:
+    prods = "".join(f'<li><a href="/toaster#{k}">{n}</a></li>' for k, n in PRODUCTS)
+    return f"""<footer class="site-footer">
+  <div class="footer-top">
+    <img class="footer-mark" src="/assets/brand/avalonx-wordmark-on-dark.svg" width="681" height="98" alt="AvalonX">
+    <div class="footer-cols">
+      <div><h2>AvalonX</h2><ul><li><a href="/about">아발론엑스</a></li><li><a href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a></li></ul></div>
+      <div><h2>Menu</h2><ul><li><a href="/toaster">Toaster</a></li><li><a href="/security">보안·구축</a></li><li><a href="/about">회사</a></li><li><a href="/contact">도입 문의</a></li></ul></div>
+      <div><h2>Toaster</h2><ul>{prods}</ul></div>
     </div>
-    <p class="footer-products"><span>제품</span><a href="/toaster#studio">Studio</a><a href="/toaster#forge">Forge</a><a href="/toaster#judge">Judge</a><a href="/toaster#index">Index</a><a href="/toaster#agent">Agent</a></p>
-    <div class="footer-bottom"><span>© 2026 AvalonX · 아발론엑스</span><span>Own your AI.</span></div>
   </div>
+  <div class="footer-bottom"><span>© 2026 AvalonX · 아발론엑스. Own your AI.</span><a href="#main">맨 위로 ↑</a></div>
 </footer>"""
+
+
+FOOTER = _footer()
 
 
 def region(html: str, name: str, body: str) -> str:

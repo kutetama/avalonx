@@ -17,13 +17,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- @assets -->
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/assets/fonts/ax-sans.woff2?v=20261103d" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/ax-heading-800.woff2?v=20261103d" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ax-sans.woff2?v=20261104a" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ax-heading-800.woff2?v=20261104a" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Unbounded:wght@800&display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261103d">
-<script src="/js/main.js?v=20261103d" defer></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="/css/site.css?v=20261104a">
+<script src="/js/main.js?v=20261104a" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PF8YSG744"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0PF8YSG744');</script>
 <!-- /@assets -->
@@ -32,93 +32,73 @@
 <!-- @header -->
 <a class="skip-link" href="#main">본문 바로가기</a>
 <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/" aria-label="AvalonX 홈"><img src="/assets/brand/avalonx-wordmark-on-dark.svg" width="182" height="26" alt="AvalonX"></a>
-    <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu" hidden><span></span><span></span></button>
-    <nav id="site-menu" class="site-nav" aria-label="주 메뉴">
-      <a href="/toaster">Toaster</a>
-      <a href="/security">보안·구축</a>
-      <a href="/about">회사</a>
-      <a href="/contact" class="nav-contact" aria-current="page">도입 문의</a>
-    </nav>
-  </div>
+  <a class="brand" href="/" aria-label="AvalonX 홈"><img src="/assets/brand/avalonx-wordmark-on-light.svg" width="224" height="32" alt="AvalonX"></a>
+  <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu" hidden>Menu <span class="dot" aria-hidden="true"></span></button>
+  <nav id="site-menu" class="site-nav" aria-label="주 메뉴">
+    <a href="/toaster">Toaster</a>
+    <a href="/security">보안·구축</a>
+    <a href="/about">회사</a>
+    <a href="/contact" class="nav-contact" aria-current="page">도입 문의</a>
+  </nav>
 </header>
 <!-- /@header -->
 
 <main id="main">
-<section class="page-intro">
-    <div class="container">
-      <div class="page-intro-copy">
-        <p class="eyebrow">Contact</p>
+<section class="page-hero">
+    <p class="giant" aria-hidden="true">Contact<span class="blue">.</span></p>
+    <div class="page-hero-body">
+      <div>
         <h1>업무 하나로 시작하는 <em>PoC</em>를 제안합니다.</h1>
-        <p>대상 업무와 데이터 환경을 알려주시면 범위와 확인할 항목을 정리해 회신합니다.</p>
+        <p class="lede">대상 업무와 데이터 환경을 알려주시면 범위와 확인할 항목을 정리해 회신합니다.</p>
       </div>
       <div class="scatter" aria-hidden="true"><i></i><i class="s"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="y"></i><i></i><i></i><i></i><i class="p"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="flow-title">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">01 · Process</p>
-        <h2 id="flow-title">문의 후 이렇게 진행합니다.</h2>
-      </div>
-      <ol class="steps">
-        <li class="step"><span class="step-no" aria-hidden="true">01</span><h3>범위 합의</h3><p>대상 업무 1개와 샘플 데이터의 범위를 정합니다.</p></li>
-        <li class="step"><span class="step-no" aria-hidden="true">02</span><h3>환경 확인</h3><p>보안 요건과 설치 환경 체크리스트를 주고받습니다.</p></li>
-        <li class="step"><span class="step-no" aria-hidden="true">03</span><h3>PoC</h3><p>PoC를 진행하고, 정량 지표로 다음 범위를 결정합니다.</p></li>
-      </ol>
+  <section class="section" aria-labelledby="mail-title">
+    <p class="label" id="mail-title">01 · Email</p>
+    <p style="margin-top:28px"><a class="mail-big" href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a></p>
+    <div class="mail-actions">
+      <a class="pill solid" id="compose-email" href="mailto:homepage@avalonx.kr?subject=%5BAvalonX%5D%20%EB%8F%84%EC%9E%85%20%EB%AC%B8%EC%9D%98">이메일 작성 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      <button class="pill" id="copy-email" type="button" hidden>주소 복사</button>
+      <span class="small muted">이메일 작성을 누르면 기본 메일 앱이 열립니다.</span>
+    </div>
+    <p class="copy-status" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="section paper" aria-labelledby="write-title">
+    <div class="split">
+      <div><p class="label">02 · What to include</p><h2 class="display" id="write-title" style="margin-top:20px">함께 적어 주시면<br>첫 회신이 빨라집니다.</h2></div>
+      <ul class="checks" style="margin:0;font-size:1.0625rem">
+        <li>관심 제품: Studio · Forge · Judge · Index · Agent</li>
+        <li>해결하려는 업무와 활용하려는 자료</li>
+        <li>현재 쓰는 모델과 설치 환경(온프레미스·폐쇄망·망분리 여부)</li>
+        <li>보안·운영 관련 요구사항</li>
+      </ul>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="mail-title">
-    <div class="container contact-grid">
-      <div>
-        <div class="section-head">
-          <p class="eyebrow">02 · Email</p>
-          <h2 id="mail-title">이메일로 문의해 주세요.</h2>
-        </div>
-        <p style="margin-bottom:var(--space-4)">아래 내용을 함께 적어 주시면 첫 회신이 빨라집니다.</p>
-        <ul class="checks mail-list">
-          <li>관심 제품: Studio · Forge · Judge · Index · Agent</li>
-          <li>해결하려는 업무와 활용하려는 자료</li>
-          <li>현재 쓰는 모델과 설치 환경(온프레미스·폐쇄망·망분리 여부)</li>
-          <li>보안·운영 관련 요구사항</li>
-        </ul>
-      </div>
-      <div class="mail-panel">
-        <p class="eyebrow">문의 메일</p>
-        <a class="addr" href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a>
-        <div class="mail-actions">
-          <a class="button primary" id="compose-email" href="mailto:homepage@avalonx.kr?subject=%5BAvalonX%5D%20%EB%8F%84%EC%9E%85%20%EB%AC%B8%EC%9D%98">이메일 작성 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
-          <button class="button secondary" id="copy-email" type="button" hidden>주소 복사</button>
-        </div>
-        <p class="hint">이메일 작성을 누르면 기본 메일 앱이 열립니다.</p>
-        <p class="copy-status" role="status" aria-live="polite"></p>
-      </div>
-    </div>
+  <section class="section" aria-labelledby="flow-title">
+    <div class="sec-title"><div><p class="label">03 · Process</p><h2 class="display" id="flow-title" style="margin-top:20px">문의 후 이렇게 진행합니다.</h2></div></div>
+    <ol class="steps" style="margin-top:0">
+      <li class="step"><span class="big" aria-hidden="true">01</span><h3>범위 합의</h3><p>대상 업무 1개와 샘플 데이터의 범위를 정합니다.</p></li>
+      <li class="step"><span class="big" aria-hidden="true">02</span><h3>환경 확인</h3><p>보안 요건과 설치 환경 체크리스트를 주고받습니다.</p></li>
+      <li class="step"><span class="big" aria-hidden="true">03</span><h3>PoC</h3><p>PoC를 진행하고, 정량 지표로 다음 범위를 결정합니다.</p></li>
+    </ol>
   </section>
 </main>
 
 <!-- @footer -->
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="/assets/brand/avalonx-wordmark-on-dark.svg" width="154" height="22" alt="AvalonX" loading="lazy">
-        <p>당신의 데이터로, 당신의 환경에서.</p>
-      </div>
-      <nav class="footer-links" aria-label="하단 메뉴">
-        <a href="/toaster">Toaster</a>
-        <a href="/security">보안·구축</a>
-        <a href="/about">회사</a>
-        <a href="/contact">도입 문의</a>
-      </nav>
-      <a class="footer-email" href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a>
+  <div class="footer-top">
+    <img class="footer-mark" src="/assets/brand/avalonx-wordmark-on-dark.svg" width="681" height="98" alt="AvalonX">
+    <div class="footer-cols">
+      <div><h2>AvalonX</h2><ul><li><a href="/about">아발론엑스</a></li><li><a href="mailto:homepage@avalonx.kr">homepage@avalonx.kr</a></li></ul></div>
+      <div><h2>Menu</h2><ul><li><a href="/toaster">Toaster</a></li><li><a href="/security">보안·구축</a></li><li><a href="/about">회사</a></li><li><a href="/contact">도입 문의</a></li></ul></div>
+      <div><h2>Toaster</h2><ul><li><a href="/toaster#studio">Studio</a></li><li><a href="/toaster#forge">Forge</a></li><li><a href="/toaster#judge">Judge</a></li><li><a href="/toaster#index">Index</a></li><li><a href="/toaster#agent">Agent</a></li></ul></div>
     </div>
-    <p class="footer-products"><span>제품</span><a href="/toaster#studio">Studio</a><a href="/toaster#forge">Forge</a><a href="/toaster#judge">Judge</a><a href="/toaster#index">Index</a><a href="/toaster#agent">Agent</a></p>
-    <div class="footer-bottom"><span>© 2026 AvalonX · 아발론엑스</span><span>Own your AI.</span></div>
   </div>
+  <div class="footer-bottom"><span>© 2026 AvalonX · 아발론엑스. Own your AI.</span><a href="#main">맨 위로 ↑</a></div>
 </footer>
 <!-- /@footer -->
 </body>
