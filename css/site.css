@@ -6,10 +6,10 @@
  */
 
 /* 서체: 사이트에 쓰인 글자만 남긴 자체 호스팅 서브셋 (tools/subset-fonts.py). SIL OFL 1.1 — assets/fonts/LICENSE.md */
-@font-face { font-family: "AX Sans"; src: url("/assets/fonts/ax-sans.woff2?v=20261104b") format("woff2"); font-weight: 45 920; font-display: swap; }
-@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-700.woff2?v=20261104b") format("woff2"); font-weight: 700; font-display: swap; }
-@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-800.woff2?v=20261104b") format("woff2"); font-weight: 800; font-display: swap; }
-@font-face { font-family: "AX Pixel"; src: url("/assets/fonts/ax-pixel.woff2?v=20261104b") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "AX Sans"; src: url("/assets/fonts/ax-sans.woff2?v=20261104c") format("woff2"); font-weight: 45 920; font-display: swap; }
+@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-700.woff2?v=20261104c") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-800.woff2?v=20261104c") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "AX Pixel"; src: url("/assets/fonts/ax-pixel.woff2?v=20261104c") format("woff2"); font-weight: 400; font-display: swap; }
 
 :root {
   color-scheme: light;
@@ -440,3 +440,21 @@ a.row:hover .name { color: var(--blue); transform: translateX(10px); }
 .case-title { overflow-wrap: anywhere; }
 address { font-style: normal; }
 .footer-cols address { color: var(--d-body); font-size: .9375rem; max-width: 16rem; }
+
+/* ── 이미지 (AI 생성, assets/img/README.md) ── */
+.hero-art picture, .hero-art img { height: 100%; width: auto; }
+.hero-art { padding-block: 0; }
+.hero-art img { height: min(100%, 1100px); max-width: 34vw; object-fit: contain; object-position: top center; }
+.intro-art .pixel-x { --cell: clamp(18px, 2vw, 34px); }
+.sec-aside { display: grid; gap: 0; align-content: end; }
+.sec-photo { display: block; width: min(280px, 100%); margin: 0 0 28px auto; }
+.sec-photo img { width: 100%; height: auto; border-radius: 4px; }
+.sec-head .sec-aside p { text-align: left; }
+@media (max-width: 900px) { .sec-photo { margin-left: 0; } }
+@media (max-width: 760px) {
+  .hero-art img { height: 420px; max-width: none; }
+  .intro-art { display: none; }
+}
+/* 사진 가장자리를 흰 바탕에 녹인다(좌우·아래) */
+.hero-art img { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 22%, #000 78%, transparent 100%), linear-gradient(#000 85%, transparent); mask-image: linear-gradient(90deg, transparent 0, #000 22%, #000 78%, transparent 100%); }
+.sec-photo { margin-left: 0; }
