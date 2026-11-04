@@ -6,10 +6,10 @@
  */
 
 /* 서체: 사이트에 쓰인 글자만 남긴 자체 호스팅 서브셋 (tools/subset-fonts.py). SIL OFL 1.1 — assets/fonts/LICENSE.md */
-@font-face { font-family: "AX Sans"; src: url("/assets/fonts/ax-sans.woff2?v=20261104c") format("woff2"); font-weight: 45 920; font-display: swap; }
-@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-700.woff2?v=20261104c") format("woff2"); font-weight: 700; font-display: swap; }
-@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-800.woff2?v=20261104c") format("woff2"); font-weight: 800; font-display: swap; }
-@font-face { font-family: "AX Pixel"; src: url("/assets/fonts/ax-pixel.woff2?v=20261104c") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "AX Sans"; src: url("/assets/fonts/ax-sans.woff2?v=20261104d") format("woff2"); font-weight: 45 920; font-display: swap; }
+@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-700.woff2?v=20261104d") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-800.woff2?v=20261104d") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "AX Pixel"; src: url("/assets/fonts/ax-pixel.woff2?v=20261104d") format("woff2"); font-weight: 400; font-display: swap; }
 
 :root {
   color-scheme: light;
@@ -458,3 +458,10 @@ address { font-style: normal; }
 /* 사진 가장자리를 흰 바탕에 녹인다(좌우·아래) */
 .hero-art img { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 22%, #000 78%, transparent 100%), linear-gradient(#000 85%, transparent); mask-image: linear-gradient(90deg, transparent 0, #000 22%, #000 78%, transparent 100%); }
 .sec-photo { margin-left: 0; }
+/* 하위 페이지 히어로 이미지 */
+.hero-banner { margin: clamp(32px, 4vw, 56px) 0 0; }
+.hero-banner img { width: 100%; height: auto; -webkit-mask-image: linear-gradient(#000 80%, transparent); mask-image: linear-gradient(#000 80%, transparent); }
+.hero-side { display: block; width: min(340px, 34vw); flex: none; }
+.hero-side img { width: 100%; height: auto; }
+@media (max-width: 760px) { .hero-side { width: 70vw; margin-inline: auto; } }
+.hero-side.fade-r img { -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent 98%); mask-image: linear-gradient(90deg, #000 70%, transparent 98%); }
