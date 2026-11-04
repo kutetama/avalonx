@@ -6,10 +6,10 @@
  */
 
 /* 서체: 사이트에 쓰인 글자만 남긴 자체 호스팅 서브셋 (tools/subset-fonts.py). SIL OFL 1.1 — assets/fonts/LICENSE.md */
-@font-face { font-family: "AX Sans"; src: url("/assets/fonts/ax-sans.woff2?v=20261104e") format("woff2"); font-weight: 45 920; font-display: swap; }
-@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-700.woff2?v=20261104e") format("woff2"); font-weight: 700; font-display: swap; }
-@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-800.woff2?v=20261104e") format("woff2"); font-weight: 800; font-display: swap; }
-@font-face { font-family: "AX Pixel"; src: url("/assets/fonts/ax-pixel.woff2?v=20261104e") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "AX Sans"; src: url("/assets/fonts/ax-sans.woff2?v=20261104f") format("woff2"); font-weight: 45 920; font-display: swap; }
+@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-700.woff2?v=20261104f") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "AX Heading"; src: url("/assets/fonts/ax-heading-800.woff2?v=20261104f") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "AX Pixel"; src: url("/assets/fonts/ax-pixel.woff2?v=20261104f") format("woff2"); font-weight: 400; font-display: swap; }
 
 :root {
   color-scheme: light;
@@ -169,11 +169,12 @@ p { text-wrap: pretty; }
 }
 
 /* ── 홈: 히어로 ─────────────────────────────── */
-.hero { position: relative; min-height: clamp(680px, 100svh, 960px); padding: var(--pad); overflow: hidden; }
-.hero .giant { position: absolute; z-index: 2; font-size: clamp(5rem, 1rem + 11vw, 13rem); }
+.hero { --hero-giant: clamp(5rem, 1rem + 11vw, 13rem); --hero-low: clamp(56px, 9vh, 96px); position: relative; min-height: clamp(680px, 100svh, 960px); padding: var(--pad); overflow: hidden; }
+.hero .giant { position: absolute; z-index: 2; font-size: var(--hero-giant); }
 .hero-top { left: var(--pad); top: clamp(110px, 15vh, 170px); }
-.hero-bottom { right: var(--pad); bottom: clamp(56px, 9vh, 96px); text-align: right; }
-.hero-art { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
+.hero-bottom { right: var(--pad); bottom: var(--hero-low); text-align: right; }
+/* 열쇠는 아래 'your AI.' 윗선 24px 위에서 끝나게 높이를 잡는다(화면 비율이 달라도 겹치지 않게) */
+.hero-art { position: absolute; inset: 0 0 auto; height: calc(100% - var(--hero-low) - var(--hero-giant) * .86 - 24px); display: flex; justify-content: center; align-items: flex-start; pointer-events: none; }
 .hero-art .pixel-x { --cell: clamp(30px, 3.6vw, 60px); }
 .hero-note { position: absolute; font-size: .875rem; line-height: 1.7; z-index: 3; }
 .hero-note.left { left: 20%; top: 41%; }
@@ -181,7 +182,7 @@ p { text-wrap: pretty; }
 .hero-note.left::after, .hero-note.right::after { content: ""; display: block; height: 1.5px; width: clamp(96px, 12vw, 220px); background: var(--ink); margin-top: 10px; }
 .hero-note.right::after { margin-left: auto; }
 .hero-note strong { display: block; color: var(--ink); font-weight: 600; }
-.hero-desc { position: absolute; left: var(--pad); bottom: clamp(56px, 9vh, 96px); max-width: 19rem; font-size: .9375rem; line-height: 1.7; color: var(--body); z-index: 3; }
+.hero-desc { position: absolute; left: var(--pad); bottom: var(--hero-low); max-width: 19rem; font-size: .9375rem; line-height: 1.7; color: var(--body); z-index: 3; }
 .hero-desc .label { color: var(--muted); display: block; margin-bottom: 14px; }
 .hero-index { position: absolute; right: var(--pad); top: 30%; border-left: 1.5px solid var(--line); padding-left: 14px; display: grid; gap: 14px; z-index: 3; }
 .hero-index a { font-family: var(--font-label); font-size: .875rem; font-weight: 700; color: var(--muted); transition: color .2s; }
@@ -407,6 +408,7 @@ a.row:hover .name { color: var(--blue); transform: translateX(10px); }
   /* 좁은 화면: 겹치는 배치 대신 위에서 아래로 쌓는다 */
   .hero { min-height: 0; display: flex; flex-direction: column; gap: 20px; padding-top: 96px; padding-bottom: 48px; }
   .hero .giant, .hero-art, .hero-note, .hero-desc { position: static; }
+  .hero-art { height: auto; }
   .hero .giant { font-size: clamp(4.25rem, 22vw, 7rem); }
   .hero-bottom { text-align: right; order: 4; }
   .hero-art { display: flex; justify-content: center; padding: 8px 0; order: 2; }
@@ -446,7 +448,8 @@ address { font-style: normal; }
 .footer-cols address { color: var(--d-body); font-size: .9375rem; max-width: 16rem; }
 
 /* ── 이미지 (AI 생성, assets/img/README.md) ── */
-.hero-art picture, .hero-art img { height: 100%; width: auto; }
+.hero-art picture { display: block; height: 100%; }
+.hero-art img { width: auto; }
 .hero-art { padding-block: 0; }
 .hero-art img { height: min(100%, 1100px); max-width: 34vw; object-fit: contain; object-position: top center; }
 .intro-art .pixel-x { --cell: clamp(18px, 2vw, 34px); }
